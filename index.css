@@ -1,0 +1,24 @@
+.font1 {
+  font-size: 14px;
+}
+
+.font2 {
+  font-size: 16px;
+}
+
+.font3 {
+  font-size: 18px;
+}
+
+/* header {
+  margin-bottom: 100px;
+} */
+
+#myCarousel {
+  width: 50%;
+  margin: auto;
+}
+
+.carousel-inner {
+  width: 100%;
+}

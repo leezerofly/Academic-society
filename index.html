@@ -18,39 +18,77 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="index.css">
+
     <title>Document</title>
 </head>
 <body>
     <header>
-        <h1>Acadamic soci</h1>
-        <nav class="navbar navbar-default" role="navigation">
+        <h1>Academic society</h1>
+        <nav class="navbar navbar-inverse" role="navigation">
             <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">菜鸟教程</a>
+                <a class="navbar-brand" href="#">网站首页</a>
             </div>
             <div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">iOS</a></li>
-                    <li><a href="#">SVN</a></li>
+                <ul class="nav navbar-nav font3">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Java
+                            网站首页
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">jmeter</a></li>
-                            <li><a href="#">EJB</a></li>
-                            <li><a href="#">Jasper Report</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">分离的链接</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">另一个分离的链接</a></li>
+                            <li><a href="#">学会新闻</a></li>
+                            <li><a href="#">通知公告</a></li>
+                            <li><a href="#">教学研究</a></li>
+                            <li><a href="#">学术研讨</a></li>
                         </ul>
                     </li>
+                    <li><a href="#">组织机构</a></li>
+                    <li><a href="#">理事名单</a></li>
+                    <li><a href="#">学会章程</a></li>                    
+                    <li><a href="#">政策文件</a></li>                    
+                    <li><a href="#">学会名人</a></li>                    
+                    <li><a href="#">培训信息</a></li>                       
                 </ul>
             </div>
             </div>
         </nav>
     </header>
+
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/2016013008584330.jpg" alt="First slide">
+            </div>
+            <div class="item">
+                <img src="img/2016013008584330.jpg" alt="Second slide">
+            </div>
+            <div class="item">
+                <img src="img/2016013008584330.jpg" alt="Third slide">
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" href="#myCarousel" 
+           data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" 
+           data-slide="next">&rsaquo;</a>
+    </div>
+    
+    <div id="main">
+        <table id="notice">
+            <thead>
+                <span class="font3">学会新闻</span>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 </body>
 </html>
