@@ -1,0 +1,39 @@
+.font1 {
+  font-size: 14px;
+}
+
+.font2 {
+  font-size: 16px;
+}
+
+.font3 {
+  font-size: 18px;
+}
+
+/* header h1 {
+  margin-left: 20%;
+} */
+
+#carousel-generic {
+  width: 50%;
+  margin: auto;
+}
+
+nav {
+  background-color: #2b2b2b;
+  border: none !important;
+}
+
+nav div li:hover{
+  background-color: #f13a3a;
+}
+
+.container-fluid {
+  width:870px; 
+  margin: auto;
+}
+
+.carousel-control {
+  display: block;
+  vertical-align: middle;
+}
