@@ -106,15 +106,17 @@
                     <thead>
                         <td class="font3">学会新闻</td>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
             <div class="col-md-6">
                 <table id="notice">
                     <thead>
-                        <td class="font3">学会新闻</td>
+                        <td class="font3">通知公告</td>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
         </div>
