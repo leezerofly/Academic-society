@@ -1,22 +1,18 @@
-.font1 {
-  font-size: 14px;
+.top {
+  background-image: url(../img/topBg.png);
 }
 
-.font2 {
-  font-size: 16px;
-}
-
-.font3 {
-  font-size: 18px;
-}
-
-/* header h1 {
-  margin-left: 20%;
-} */
-
-#carousel-generic {
+.topContent {
   width: 50%;
   margin: auto;
+}
+
+.topContent h1 {
+  display: inline-block;
+}
+
+.signIn {
+  float: right;
 }
 
 nav {
@@ -33,7 +29,33 @@ nav div li:hover{
   margin: auto;
 }
 
-.carousel-control {
-  display: block;
-  vertical-align: middle;
+#carousel-generic {
+  width: 50%;
+  margin: auto;
+}
+
+.mainpart {
+  width: 50%;
+  margin: auto;
+}
+
+.tableArea {
+  width: 50%;
+  float: left;
+  text-align: left;
+  padding: 10px;
+}
+
+.tableTitle {
+  height: 45px;
+  line-height: 45px;
+}
+
+.titleLeft {
+  width: 14px;
+  display: inline-block;
+}
+
+.more {
+  float: right;
 }
