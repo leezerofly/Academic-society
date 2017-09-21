@@ -1,0 +1,30 @@
+.top {
+  background-image: url(../img/topBg.png);
+}
+
+.topContent {
+  width: 50%;
+  margin: auto;
+}
+
+.topContent h1 {
+  display: inline-block;
+}
+
+.signIn {
+  float: right;
+}
+
+nav {
+  background-color: #2b2b2b;
+  border: none !important;
+}
+
+nav div li:hover{
+  background-color: #f13a3a;
+}
+
+.container-fluid {
+  width:870px; 
+  margin: auto;
+}

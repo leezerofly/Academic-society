@@ -11,8 +11,6 @@
  * DB_USER: user for your database. the user needs to have rights for SELECT, UPDATE, DELETE and INSERT.
  * DB_PASS: the password of the above user
  */
- error_reporting(0);
-
 define("DB_HOST", "localhost");
 define("DB_NAME", "academic-society");
 define("DB_USER", "root");

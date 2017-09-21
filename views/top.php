@@ -1,8 +1,7 @@
 <?php
-error_reporting(0);
 
 // include the configs / constants for the database connection
-$webroot = dirname(dirname(_FILE_));
+$webroot = dirname(dirname(__FILE__));
 
 require_once($webroot.'/config/db.php');
 
@@ -31,12 +30,9 @@ $login = new Login();
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/index.css">
-	
-	<!--ueditor-->
-	<script src="/utf8-php/ueditor.config.js">/*引入配置文件*/</script>
-    <script src="/utf8-php/ueditor.all.js">/*引入源码文件*/</script>
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/top.css">
 </head>
 <body>
     <header>
@@ -46,13 +42,14 @@ $login = new Login();
                 <h1>society</h1>
                 <div class="signIn font2 fontColor1">
                     <?php                  
-                    // 判断是否已登录:
-                    if ($login->isUserLoggedIn() == true) {
-                        include("views/logged_in.php");
+                        // 判断是否已登录:
+                        if ($login->isUserLoggedIn() == true) {
+                            include($webroot.'/views/logged_in.php');
 
-                    } else {
-                        echo "<a href=\"views/not_logged_in.php\">注册与登录</a>";
-                    }?>
+                        } else {
+                            echo "<a href=\"/views/not_logged_in.php\">注册与登录</a>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -60,23 +57,23 @@ $login = new Login();
             <div class="container-fluid">
                 <div>
                     <ul class="nav navbar-nav font3">
-                        <li><a href="../index.php">网站首页</a></li>                            
-                        <li><a href="../views/organization.php">组织机构</a></li>
-                        <li><a href="#">理事名单</a></li>
-                        <li><a href="#">学会章程</a></li>                    
-                        <li><a href="#">政策文件</a></li>                    
-                        <li><a href="#">学会名人</a></li>                    
-                        <li><a href="#">培训信息</a></li> 
+                        <li><a href="/index.php">网站首页</a></li>                            
+                        <li><a href="/views/organization.php">组织机构</a></li>
+                        <li><a href="/views/directorList.php">理事名单</a></li>
+                        <li><a href="/views/regulation.php">学会章程</a></li>                    
+                        <li><a href="/views/document.php">政策文件</a></li>                    
+                        <li><a href="/views/celebrity.php">学会名人</a></li>                    
+                        <li><a href="/views/training.php">培训信息</a></li> 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="/views/notification.php" class="dropdown-toggle" data-toggle="dropdown">
                                 信息通知
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">学会新闻</a></li>
-                                <li><a href="#">通知公告</a></li>
-                                <li><a href="#">教学研究</a></li>
-                                <li><a href="#">学术研讨</a></li>
+                                <li><a href="/views/regulation.php">学会新闻</a></li>
+                                <li><a href="/views/regulation.php">通知公告</a></li>
+                                <li><a href="/views/regulation.php">教学研究</a></li>
+                                <li><a href="/views/regulation.php">学术研讨</a></li>
                             </ul>
                         </li>                      
                     </ul>

@@ -1,5 +1,5 @@
 <?php
-    include("views/top_and_nav.php");
+    include("views/top.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
