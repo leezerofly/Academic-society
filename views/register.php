@@ -1,4 +1,11 @@
 <?php
+// include the configs / constants for the database connection
+require_once("../config/db.php");
+
+require_once("../classes/Registration.php");
+
+$registration = new Registration();
+
 // show potential errors / feedback (from registration object)
 if (isset($registration)) {
     if ($registration->errors) {
@@ -52,7 +59,7 @@ if (isset($registration)) {
 
             <!-- <input type="submit"  name="register" value="注册" /> -->
             <button name="register" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-            <a href="index.php" class="btn btn-lg btn-primary btn-block">返回登录页面</a>
+            <a href="login.php" class="btn btn-lg btn-primary btn-block">返回登录页面</a>
             <br>
         </form>
     </div>

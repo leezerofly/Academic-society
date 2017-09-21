@@ -28,7 +28,7 @@ if (isset($login)) {
 <body>
     <div class="container">
         <!-- login form box -->
-        <form class="form-signin" method="post" action="index.php" name="loginform">
+        <form class="form-signin" method="post" action="../index.php" name="loginform">
             <h2 class="form-signin-heading">Please sign in</h2>
             
             <!-- <label for="login_input_username">Username</label> -->
