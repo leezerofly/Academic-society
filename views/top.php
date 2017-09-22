@@ -1,8 +1,8 @@
 <?php
 
-// include the configs / constants for the database connection
 $webroot = dirname(dirname(__FILE__));
 
+// include the configs / constants for the database connection
 require_once($webroot.'/config/db.php');
 
 // load the login class
@@ -45,7 +45,7 @@ $login = new Login();
                         // 判断是否已登录:
                         if ($login->isUserLoggedIn() == true) {
                             include($webroot.'/views/logged_in.php');
-
+                            echo "<a href=\"/views/addArticle.php\">发表文章</a>";
                         } else {
                             echo "<a href=\"/views/not_logged_in.php\">注册与登录</a>";
                         }
