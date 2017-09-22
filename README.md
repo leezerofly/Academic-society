@@ -29,7 +29,7 @@ html的路径似乎也会受影响
 
 
 
-## ueditor富文本框使用(这里用的是1.4.3.3PHP版本http://ueditor.baidu.com/website/download.html)
+## 使用ueditor富文本框(这里用的是1.4.3.3PHP版本http://ueditor.baidu.com/website/download.html)
 1. 将ueditor解压出来的文件夹放在文件目录中（具体目录没有要求，之后引入js文件时地址正确即可）
 
 2. 然后新建一个html或php等文件，
@@ -53,4 +53,42 @@ html的路径似乎也会受影响
 ```
 <script id="editor" name="editorContent" type="text/plain" style="width:100%;height:500px;"></script>
 （这里style可以设置文本框宽高）
+```
+
+## 关于php读取ueditor内容：
+
+首先用表单<form>包裹上文第3步，提交到demo.php：
+
+*a.php:*
+
+```
+<form action="demo.php" method="post">
+    <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
+    <input type="submit" value="提交"/>
+</form>
+```
+*demo.php*
+
+```
+<?php
+header("Content-type: text/html; charset=utf-8");
+print_r($_POST);
+?>
+```
+
+在*a.php*中script那里加一个name属性:
+
+```
+<form action="demo.php" method="post">
+    <script id="editor" name="editorContent" type="text/plain" style="width:100%;height:500px;"></script>
+    <input type="submit" value="提交"/>
+</form>
+```
+
+未完待续
+```
+<?php
+header("Content-type: text/html; charset=utf-8");
+print_r($_POST["editorContent"]);
+?>
 ```
