@@ -1,7 +1,7 @@
 <?php
 
-  //建立一个添加文章的类，往数据库article表中插入文章内容
-  class AddArticle {
+  //建立一个查询文章的类，往数据库article表中插入文章内容
+  class SelectArticle {
     //数据库对象
     private $db_connection = null;
 
@@ -15,10 +15,10 @@
       //创建session
       // session_start();
       if(isset($_POST["addBtn"]))
-        $this->addArticle();
+        $this->selectArticle();
     }
 
-    private function addArticle() {
+    private function selectArticle() {
       if (empty($_SESSION['user_name'])) {
         $this->errors[] = "用户名不存在";
       } elseif (empty($_POST["articleContent"])) {
