@@ -57,38 +57,21 @@ html的路径似乎也会受影响
 
 ## 关于php读取ueditor内容：
 
-首先用表单<form>包裹上文第3步，提交到demo.php：
+首先用表单```<form>```包裹上文第3步，提交到demo.php：
 
 *a.php:*
 
 ```
-<form action="demo.php" method="post">
-    <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
-    <input type="submit" value="提交"/>
-</form>
-```
-*demo.php*
-
-```
-<?php
-header("Content-type: text/html; charset=utf-8");
-print_r($_POST);
-?>
+  <form action="demo.php" method="post">
+      <script id="editor" name="editorContent" type="text/plain" style="width:100%;height:500px;"></script>
+      <input type="submit" value="提交"/>
+  </form>
 ```
 
-在*a.php*中script那里加一个name属性:
-
+*demo.php:*
 ```
-<form action="demo.php" method="post">
-    <script id="editor" name="editorContent" type="text/plain" style="width:100%;height:500px;"></script>
-    <input type="submit" value="提交"/>
-</form>
-```
-
-未完待续
-```
-<?php
-header("Content-type: text/html; charset=utf-8");
-print_r($_POST["editorContent"]);
-?>
+  <?php
+    header("Content-type: text/html; charset=utf-8");
+    print_r($_POST["editorContent"]);
+  ?>
 ```

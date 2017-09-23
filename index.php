@@ -1,5 +1,9 @@
 <?php
     include("views/top.php");
+
+    require_once("classes/SelectArticle.php");
+
+    $selectArticle = new SelectArticle();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,11 +61,9 @@
             </div>
             <table class="table">
                 <tbody>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
+                    <?php  
+                        $selectArticle->selectArticleTitle(1);
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -74,11 +76,9 @@
             </div>
             <table class="table">
                 <tbody>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
+                    <?php  
+                        $selectArticle->selectArticleTitle(2);
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -86,16 +86,14 @@
         <div class="tableArea">         
             <div class="tableTitle">
                 <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
-                <span class="font4">通知公告</span>
+                <span class="font4">文章类型3</span>
                 <a href="" class="more">更多</a>
             </div>
             <table class="table">
                 <tbody>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
+                    <?php  
+                        $selectArticle->selectArticleTitle(3);
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -103,33 +101,14 @@
         <div class="tableArea">         
             <div class="tableTitle">
                 <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
-                <span class="font4">通知公告</span>
+                <span class="font4">文章类型4</span>
                 <a href="" class="more">更多</a>
             </div>
             <table class="table">
                 <tbody>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="tableArea">         
-            <div class="tableTitle">
-                <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
-                <span class="font4">通知公告</span>
-                <a href="" class="more">更多</a>
-            </div>
-            <table class="table">
-                <tbody>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
-                    <tr><td>123456789</td></tr>
+                    <?php  
+                        $selectArticle->selectArticleTitle(4);
+                    ?>
                 </tbody>
             </table>
         </div>

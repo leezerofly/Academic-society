@@ -12,18 +12,9 @@
     public $messages = array();
 
     public function __construct() {
-      //创建session
-      // session_start();
-      if(isset($_POST["addBtn"]))
-        $this->selectArticle();
     }
 
-    private function selectArticle() {
-      if (empty($_SESSION['user_name'])) {
-        $this->errors[] = "用户名不存在";
-      } elseif (empty($_POST["articleContent"])) {
-        $this->errors[] = "文档不能为空";
-      } else {
+    public function selectArticleTitle($articleTypeId) {
         //连接数据库
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -34,42 +25,24 @@
 
         //数据库正常连接
         if (!$this->db_connection->connect_errno) {
-          
-          //文章类型id
-          $articleTypeId = $_POST['articleTypeId'];
-          
-          //文章标题
-          $articleTitle = $_POST['articleTitle'];
 
-          //文章内容
-          $articleContent = $_POST["articleContent"];
+          // 根据文章类型id article_type_id 倒序查询top5的文章标题 article_title       
+          $sql1 = "SELECT * FROM article WHERE article_type_id = '" . $articleTypeId . "' ORDER BY article_id DESC LIMIT 5;";
+          $result = $this->db_connection->query($sql1);      
 
-          // escaping, additionally removing everything that could be (html/javascript-) code
-          $user_name = $this->db_connection->real_escape_string(strip_tags($_SESSION['user_name'], ENT_QUOTES));
-
-          // 根据user_name查询user_id         
-          $sql1 = "SELECT * FROM users WHERE user_name = '" . $user_name . "';";
-          $result = $this->db_connection->query($sql1);
-          $row = $result->fetch_assoc();
-          $articleUserId = $row['user_id'];
-
-          // 将 文章类型id·文章标题·文章内容·发表文章用户id 插入数据库
-          $sql2 = "INSERT INTO article (article_type_id, article_title, article_content, article_user_id)
-                  VALUES('" . $articleTypeId . "', '" . $articleTitle . "', '" . $articleContent ."', '".$articleUserId."');";
-          $query_new_article_insert = $this->db_connection->query($sql2);
+          while($row=$result->fetch_assoc()){
+              echo "<tr><td>".$row["article_title"]."</td></tr>";
+          }
 
           // if user has been added successfully
-          if ($query_new_article_insert) {
-              $this->messages[] = "文章发表成功！";
+          if ($row) {
+              $this->messages[] = "查询成功！";
           } else {
-              $this->errors[] = "对不起，文章发表失败，请您返回重试。";
+              $this->errors[] = "对不起，查询失败失败，请您返回重试。";
           }
 
         } else {
             $this->errors[] = "数据库连接失败。";
         }
-        echo $_SESSION['user_name'];
-        print_r($_POST["articleTitle"]);
-      }
     }
   }
