@@ -1,11 +1,10 @@
-
-
 #carousel-generic {
   width: 50%;
   margin: auto;
 }
 
 .mainpart {
+  background-color: #fff;
   width: 50%;
   margin: auto;
 }

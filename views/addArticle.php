@@ -36,21 +36,25 @@
   <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
   <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
 
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/addArticle.css">
+  
 </head>
 <body>
   <div class="mainpart">
     <form action="addArticle.php" method="post">
-        <input type="text" name="articleTitle">
+        <input type="text" calss="login_input form-control" name="articleTitle" placeholder="请输入文章标题" required>
         
-        <select class="form-control" name="articleTypeId" >
+        <select name="articleTypeId" >
             <option value ="1">学会新闻</option>
             <option value ="2">通知公告</option>
+            <option value ="3">文章类型3</option>
+            <option value ="4">文章类型4</option>
         </select>
 
         <script id="editor" name="articleContent" type="text/plain" style="width:100%;height:500px;"></script>
 
-        <input type="submit" name="addBtn" value="提交"/>
+        <input type="submit" calss="login_input form-control" name="addBtn" value="提交"/>
     </form>
   </div>
 

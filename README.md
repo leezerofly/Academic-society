@@ -75,3 +75,44 @@ html的路径似乎也会受影响
     print_r($_POST["editorContent"]);
   ?>
 ```
+
+## PHP实现点击从数据库读出的新闻标题后能进入另一个页面并显示相应的新闻内容数据：
+做一个内页
+标题链接把id传过去，然后内页根据id读取数据库内容显示
+
+例如:
+
+标题列表
+PHP code
+```
+<?php
+$query="SELECT  content FROM gcjsgs_article";
+$result=@mysql_query($query)or die('SQL错误,错误类型'.mysql_error());
+mysql_query('SET NAMES UTF8')or die('字符集设置错误');
+$sql ="select * from gcjsgs_article  order by id desc";
+$paper=mysql_query($sql);
+while($rs=mysql_fetch_array($paper)){
+?> 
+<li><span class="Title"><a href="article.php?id=<?php echo $rs['id']; ?>" target="_blank">
+<?php
+echo $rs["title"];
+?>
+</a></span><?php echo $rs["addtime"];?>></li>
+<?php
+}?>
+```
+
+
+*内页 article.php*
+```
+<?php
+$id = isset($_GET['id'])? $_GET['id'] : 0;
+ 
+mysql_query('SET NAMES UTF8')or die('字符集设置错误');
+$sql ="select * from gcjsgs_article  where id='".$id."'";
+$paper=mysql_query($sql);
+while($rs=mysql_fetch_array($paper)){
+    echo $rs['content'];
+}
+?>
+```

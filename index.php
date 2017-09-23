@@ -9,6 +9,8 @@
 <html lang="en">
 <head>
     <title>首页</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <div id="carousel-generic" class="carousel slide" data-ride="carousel">

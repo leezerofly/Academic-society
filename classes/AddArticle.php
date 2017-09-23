@@ -21,8 +21,10 @@
     private function addArticle() {
       if (empty($_SESSION['user_name'])) {
         $this->errors[] = "用户名不存在";
+      } elseif (empty($_POST["articleTitle"])) {
+        $this->errors[] = "文章标题不能为空";
       } elseif (empty($_POST["articleContent"])) {
-        $this->errors[] = "文档不能为空";
+        $this->errors[] = "文章内容不能为空";
       } else {
         //连接数据库
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
