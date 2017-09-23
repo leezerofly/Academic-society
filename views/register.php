@@ -59,7 +59,7 @@ if (isset($registration)) {
 
             <!-- <input type="submit"  name="register" value="注册" /> -->
             <button name="register" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-            <a href="login.php" class="btn btn-lg btn-primary btn-block">返回登录页面</a>
+            <a href="/index.php" class="btn btn-lg btn-primary btn-block">返回登录页面</a>
             <br>
         </form>
     </div>

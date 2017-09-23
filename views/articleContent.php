@@ -9,17 +9,38 @@
     echo $db_connection->error;
   }
 
-  $sql ="select * from article where article_id='".$articleId."'";
+  $sql ="SELECT * FROM article WHERE article_id='".$articleId."'";
   $result = $db_connection->query($sql); 
   // $result = mysqli_query($sql); 
 
   if ($result->num_rows > 0) {
     // 输出数据
     while($row = $result->fetch_assoc()) {
-      echo "<h1>".$row['article_title']."</h1>";
-      echo $row['article_content'];
+      echo "<div class=\"mainpart\">
+        <h1 class=\"title\">".$row['article_title']."</h1>
+        <div class=\"content\">"
+        .$row['article_content'].
+        "</div>
+        <div class=\"bottom\">"
+        .$row['article_time'].
+        "</div>
+      </div>";
     }
   } else {
     echo "0 结果";
   }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文章详情</title>
+
+  <link rel="stylesheet" href="/css/articleContent.css">
+</head>
+<body>
+  
+</body>
+</html>

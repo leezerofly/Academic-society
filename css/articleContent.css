@@ -1,0 +1,13 @@
+.mainpart {
+  background-color: #fff;
+  width: 50%;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.bottom {
+  text-align: right;
+}
