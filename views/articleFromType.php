@@ -7,7 +7,7 @@
   $selectArticle = new SelectArticle();
 
   // 根据id查询文章内容
-  $selectArticle->selectArticleFromId();
+  $selectArticle->selectArticleFromType();
 ?>
 <!DOCTYPE html>
 <html lang="en">

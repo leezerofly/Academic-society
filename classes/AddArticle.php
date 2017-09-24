@@ -20,7 +20,7 @@
 
     private function addArticle() {
       if (empty($_SESSION['user_name'])) {
-        $this->errors[] = "用户名不存在";
+        $this->errors[] = "请先登录才能发表文章哦";
       } elseif (empty($_POST["articleTitle"])) {
         $this->errors[] = "文章标题不能为空";
       } elseif (empty($_POST["articleContent"])) {

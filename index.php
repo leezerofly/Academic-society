@@ -4,6 +4,20 @@
     require_once("classes/SelectArticle.php");
 
     $selectArticle = new SelectArticle();
+
+    //输出错误及提示信息
+    if (isset($selectArticle)) {
+        if ($selectArticle->errors) {
+            foreach ($selectArticle->errors as $error) {
+                echo $error;
+            }
+        }
+        if ($selectArticle->messages) {
+            foreach ($selectArticle->messages as $message) {
+                echo $message;
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -50,6 +50,18 @@
             <option value ="2">通知公告</option>
             <option value ="3">文章类型3</option>
             <option value ="4">文章类型4</option>
+            <?php
+            if($login->isAdmin()) {
+                echo "
+                <option value =\"5\">组织机构</option>
+                <option value =\"6\">理事名单</option>
+                <option value =\"7\">学会章程</option>
+                <option value =\"8\">政策文件</option>
+                <option value =\"9\">学会名人</option>
+                <option value =\"10\">培训信息</option>
+                ";
+            }
+            ?>
         </select>
 
         <script id="editor" name="articleContent" type="text/plain" style="width:100%;height:500px;"></script>
