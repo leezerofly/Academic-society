@@ -6,8 +6,10 @@
   
   $selectArticle = new SelectArticle();
 
-  // 根据type id查询文章内容
-  $selectArticle->selectArticleFromType();
+  $articleTypeId = isset($_GET['article_type_id'])? $_GET['article_type_id'] : 0; 
+
+  // 根据id查询文章内容
+  $selectArticle->selectArticleTitleAll($articleTypeId);
 ?>
 <!DOCTYPE html>
 <html lang="en">
