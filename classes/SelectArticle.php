@@ -67,9 +67,9 @@
             $result = $this->db_connection->query($sql);      
 
             while($row=$result->fetch_assoc()){
-                echo "<tr><td>
+                echo "<div class=\"mainpart\"><tr><td>
                 <p><a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\">".$row["article_title"]."</a></p>
-                ".$row["article_time"]."</td></tr>";
+                ".$row["article_time"]."</td></tr></div>";
             } 
 
             // if user has been added successfully
