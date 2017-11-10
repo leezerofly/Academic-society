@@ -17,7 +17,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>文章详情</title>
 
-  <link rel="stylesheet" href="/css/articleContent.css">
+  <link rel="stylesheet" href="/css/article-ontent.css">
 </head>
 <body>
   
