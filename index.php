@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <article>
+    <!-- 导航条 -->
     <div id="carousel-generic" class="carousel slide" data-ride="carousel">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
@@ -68,6 +70,7 @@
         </a>
     </div>
     
+    <!-- 各文章列表 -->
     <div class="mainpart">
         <div class="tableArea">         
             <div class="tableTitle">
@@ -129,5 +132,9 @@
             </table>
         </div>
     </div>
+    </article>
+
+    <!-- 网站底部 -->
+    <?php include("views/bottom.php"); ?>
 </body>
 </html>
