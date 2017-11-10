@@ -28,9 +28,13 @@ if (isset($registration)) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Bootstrap -->
     <link href="/framework/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet" media="screen">
+
+    <!-- 自定义样式 -->
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/sign.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">

@@ -37,9 +37,6 @@
   <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
   <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
 
-  <!-- 引入bootstrap -->
-  <!-- <link rel="stylesheet" href="../css/bootstrap.min.css">   -->
-
   <!-- 引入自定义样式 -->
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/add-article.css">
@@ -47,16 +44,16 @@
 </head>
 <body>
   <div class="mainpart">
-    <formclass="form-horizontal" action="addArticle.php" method="post">
+    <form class="form-horizontal" action="addArticle.php" method="post">
         <!-- 文章标题 -->
         <div class="form-group">
             <label for="articleTitle">文章标题</label>
-            <input calss="form-control" id="articleTitle" name="articleTitle" type="text" placeholder="请输入文章标题" required>
+            <input type="text" class="form-control" id="articleTitle" name="articleTitle" placeholder="请输入文章标题" required>
         </div>
         <!-- 文章类型 -->
         <div class="form-group">
             <label for="articleTypeId">文章类型</label>
-            <select calss="form-control" id="articleTypeId" name="articleTypeId"  >
+            <select class="form-control" id="articleTypeId" name="articleTypeId"  >
                 <option value ="1">学会新闻</option>
                 <option value ="2">通知公告</option>
                 <option value ="3">文章类型3</option>
@@ -80,11 +77,9 @@
         <script id="editor" name="articleContent" type="text/plain" style="width:100%;height:500px;"></script>
 
         <!-- 发表按钮 -->
-        <!-- <input type="submit" calss="btn" name="addBtn" value="提交"/> -->
-        <button class="btn btn-info" type="submit">发表</button>
+        <input type="submit" class="btn btn-info" name="addBtn" value="发表"/>
     </form>
   </div>
-
 
   <script type="text/javascript">
 

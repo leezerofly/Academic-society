@@ -24,7 +24,10 @@ if (isset($login)) {
     
     <!-- Bootstrap -->
     <link href="/framework/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet"">
+
+    <!-- 自定义样式 -->
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/sign.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
