@@ -3,19 +3,17 @@
   margin: auto;
 }
 
-.mainpart {
-  /* background-color: #fff; */
+.article-list {
   width: 60%;
-  margin: auto;
-  clear: both;
+  margin: 15px auto;
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
+  border-radius: 3px; 
 }
 
 .board {
   height: 400px;
   overflow: hidden; /*自动隐藏文字*/
-  background: #ffffff;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
-  border-radius: 3px;
 }
 
 .text-hidden {

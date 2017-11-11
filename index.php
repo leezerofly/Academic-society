@@ -71,20 +71,18 @@
     </div>
     
     <!-- 各文章列表 -->
-    <div class="mainpart row">
+    <div class="row article-list">
         <div class="col-md-6 board">         
             <div class="board-title">
                 <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">学会新闻</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=1" class="more">更多</a>
             </div>
-            <table class="table table-hover text-hidden">
-                <tbody>
-                    <?php  
-                        $selectArticle->selectArticleTitle(1);
-                    ?>
-                </tbody>
-            </table>
+            <div class="list-group">
+                <?php  
+                    $selectArticle->selectArticleTitle(1);
+                ?>
+            </div>
         </div>
 
         <div class="col-md-6 board">         
@@ -93,13 +91,11 @@
                 <span class="font4">通知公告</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=2" class="more">更多</a>
             </div>
-            <table class="table">
-                <tbody>
-                    <?php  
-                        $selectArticle->selectArticleTitle(2);
-                    ?>
-                </tbody>
-            </table>
+            <div class="list-group">
+                <?php  
+                    $selectArticle->selectArticleTitle(2);
+                ?>
+            </div>
         </div>
 
         <div class="col-md-6 board">         
@@ -108,13 +104,11 @@
                 <span class="font4">文章类型3</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=3" class="more">更多</a>
             </div>
-            <table class="table">
-                <tbody>
-                    <?php  
-                        $selectArticle->selectArticleTitle(3);
-                    ?>
-                </tbody>
-            </table>
+            <div class="list-group">
+                <?php  
+                    $selectArticle->selectArticleTitle(3);
+                ?>
+            </div>
         </div>
 
         <div class="col-md-6 board">         
@@ -123,13 +117,11 @@
                 <span class="font4">文章类型4</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=4" class="more">更多</a>
             </div>
-            <table class="table">
-                <tbody>
-                    <?php  
-                        $selectArticle->selectArticleTitle(4);
-                    ?>
-                </tbody>
-            </table>
+            <div class="list-group">
+                <?php  
+                    $selectArticle->selectArticleTitle(4);
+                ?>
+            </div>
         </div>
     </div>
     </article>

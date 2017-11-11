@@ -32,9 +32,10 @@
           $result = $this->db_connection->query($sql);      
 
           while($row=$result->fetch_assoc()){
-              echo "<tr><td>
-              <p><a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\">".$row["article_title"]."</a></p>
-              ".$row["article_time"]."</td></tr>";
+              echo "<a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\" class=\"list-group-item\">".
+                        "<p>".$row["article_title"]."</p>".
+                        $row["article_time"].
+                    "</a>";
           } 
 
           // if user has been added successfully
