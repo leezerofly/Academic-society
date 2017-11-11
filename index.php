@@ -71,14 +71,14 @@
     </div>
     
     <!-- 各文章列表 -->
-    <div class="mainpart">
-        <div class="tableArea">         
+    <div class="mainpart row">
+        <div class="col-md-6 table-area">         
             <div class="tableTitle">
                 <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">学会新闻</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=1" class="more">更多</a>
             </div>
-            <table class="table">
+            <table class="table table-hover">
                 <tbody>
                     <?php  
                         $selectArticle->selectArticleTitle(1);
@@ -87,7 +87,7 @@
             </table>
         </div>
 
-        <div class="tableArea">         
+        <div class="col-md-6">         
             <div class="tableTitle">
                 <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">通知公告</span>
@@ -102,7 +102,7 @@
             </table>
         </div>
 
-        <div class="tableArea">         
+        <div class="col-md-6">         
             <div class="tableTitle">
                 <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">文章类型3</span>
@@ -117,7 +117,7 @@
             </table>
         </div>
 
-        <div class="tableArea">         
+        <div class="col-md-6">         
             <div class="tableTitle">
                 <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">文章类型4</span>

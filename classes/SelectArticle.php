@@ -170,7 +170,7 @@
         }
     }
 
-    // 根据文章type直接读取文章内容
+    // 根据文章type直接读取该类第一篇文章内容
     public function selectArticleFromType() {
 
         $articleTypeId = isset($_GET['article_type_id'])? $_GET['article_type_id'] : 0; 
