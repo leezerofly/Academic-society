@@ -10,19 +10,26 @@
   clear: both;
 }
 
-.table-area {
-  text-align: left;
+.board {
+  height: 400px;
+  overflow: hidden; /*自动隐藏文字*/
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
+  border-radius: 3px;
+}
+
+.text-hidden {
   overflow: hidden; /*自动隐藏文字*/
   text-overflow: ellipsis;/*文字隐藏后添加省略号*/
   white-space: nowrap;/*强制不换行*/
 }
 
-.tableTitle {
+.board-title {
   height: 45px;
   line-height: 45px;
 }
 
-.titleLeft {
+.title-left {
   width: 14px;
   display: inline-block;
 }

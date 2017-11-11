@@ -72,13 +72,13 @@
     
     <!-- 各文章列表 -->
     <div class="mainpart row">
-        <div class="col-md-6 table-area">         
-            <div class="tableTitle">
-                <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
+        <div class="col-md-6 board">         
+            <div class="board-title">
+                <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">学会新闻</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=1" class="more">更多</a>
             </div>
-            <table class="table table-hover">
+            <table class="table table-hover text-hidden">
                 <tbody>
                     <?php  
                         $selectArticle->selectArticleTitle(1);
@@ -87,9 +87,9 @@
             </table>
         </div>
 
-        <div class="col-md-6">         
-            <div class="tableTitle">
-                <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
+        <div class="col-md-6 board">         
+            <div class="board-title">
+                <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">通知公告</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=2" class="more">更多</a>
             </div>
@@ -102,9 +102,9 @@
             </table>
         </div>
 
-        <div class="col-md-6">         
-            <div class="tableTitle">
-                <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
+        <div class="col-md-6 board">         
+            <div class="board-title">
+                <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">文章类型3</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=3" class="more">更多</a>
             </div>
@@ -117,9 +117,9 @@
             </table>
         </div>
 
-        <div class="col-md-6">         
-            <div class="tableTitle">
-                <span class="titleLeft"><img src="img/titleLeft.png" alt=""></span>
+        <div class="col-md-6 board">         
+            <div class="board-title">
+                <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">文章类型4</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=4" class="more">更多</a>
             </div>
