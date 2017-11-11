@@ -91,8 +91,11 @@
        $selectArticle->selectAllTitle();
       ?> 
     </table>
-      <div id="myDiv"></div>
-
+  </div>
+  <div class="list-group">
+    <?php  
+      $selectArticle->selectAllTitle();
+    ?>
   </div>
 </body>
 </html>

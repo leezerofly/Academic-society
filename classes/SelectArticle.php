@@ -68,9 +68,10 @@
             $result = $this->db_connection->query($sql);      
 
             while($row=$result->fetch_assoc()){
-                echo "<div class=\"mainpart\"><tr><td>
-                <p><a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\">".$row["article_title"]."</a></p>
-                ".$row["article_time"]."</td></tr></div>";
+                echo "<a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\" class=\"list-group-item\">".
+                        "<p>".$row["article_title"]."</p>".
+                        $row["article_time"].
+                    "</a>";
             } 
 
             // if user has been added successfully
@@ -103,13 +104,12 @@
           $result = $this->db_connection->query($sql);      
 
           while($row=$result->fetch_assoc()){
-            echo "<tr><td>
-            <p><a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\">".$row["article_title"]."</a>
-            <!-- <button class=\"\" onclick=\"delete(".$row["article_id"].")\">删除</button>-->
-            <a href=\"/views/deleteArticle.php?article_id=".$row["article_id"]."\">删除</a>
-            </p>
-            ".$row["article_time"]."
-            </td></tr>";
+            echo "<a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\" class=\"list-group-item\">".
+                    "<p>".$row["article_title"]."</p>".
+                    $row["article_time"].
+                "</a>
+                <!-- <button class=\"\" onclick=\"delete(".$row["article_id"].")\">删除</button>-->
+                <a href=\"/views/deleteArticle.php?article_id=".$row["article_id"]."\">删除</a>";
           } 
 
           // if user has been added successfully

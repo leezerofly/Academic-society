@@ -7,9 +7,6 @@
   $selectArticle = new SelectArticle();
 
   $articleTypeId = isset($_GET['article_type_id'])? $_GET['article_type_id'] : 0; 
-
-  // 根据id查询文章内容
-  $selectArticle->selectArticleTitleAll($articleTypeId);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +19,11 @@
   <link rel="stylesheet" href="/css/articleContent.css">
 </head>
 <body>
-  
+  <div class="list-group">
+    <?php  
+      // 根据typeid查询文章内容
+      $selectArticle->selectArticleTitleAll($articleTypeId);
+    ?>
+  </div>
 </body>
 </html>
