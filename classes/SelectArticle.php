@@ -109,7 +109,7 @@
                     $row["article_time"].
                 "</a>
                 <!-- <button class=\"\" onclick=\"delete(".$row["article_id"].")\">删除</button>-->
-                <a href=\"/views/deleteArticle.php?article_id=".$row["article_id"]."\">删除</a>";
+                <a href=\"/views/adminArticle.php?article_id=".$row["article_id"]."\">删除</a>";
           } 
 
           // if user has been added successfully

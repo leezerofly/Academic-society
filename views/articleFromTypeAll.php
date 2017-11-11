@@ -17,9 +17,10 @@
   <title>文章详情</title>
 
   <link rel="stylesheet" href="/css/articleContent.css">
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-  <div class="list-group">
+  <div class="list-group article-list">
     <?php  
       // 根据typeid查询文章内容
       $selectArticle->selectArticleTitleAll($articleTypeId);

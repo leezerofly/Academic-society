@@ -5,27 +5,8 @@
   // 引入SelectArticle类
   require_once("../classes/SelectArticle.php");
   $selectArticle = new SelectArticle();
-
-  // 引入DeleteArticle类
-  require_once("../classes/DeleteArticle.php");
-  $deleteArticle = new DeleteArticle();
-
-
-  //输出错误及提示信息
-  if (isset($deleteArticle)) {
-    if ($deleteArticle->errors) {
-        foreach ($deleteArticle->errors as $error) {
-            echo $error;
-        }
-    }
-    if ($deleteArticle->messages) {
-        foreach ($deleteArticle->messages as $message) {
-            echo $message;
-        }
-    }
-  }
-
-  //输出错误及提示信息
+  
+  //输出查询文章时错误及提示信息
   if (isset($selectArticle)) {
     if ($selectArticle->errors) {
       foreach ($selectArticle->errors as $error) {
@@ -47,9 +28,44 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>管理文章</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/addArticle.css">
+  <link rel="stylesheet" href="/css/index.css">
   
+</head>
+<body>
+  <div class="list-group article-list">
+    <?php  
+      $selectArticle->selectAllTitle();
+    ?>
+  </div>
+
+  <?php
+    // 引入DeleteArticle类
+    require_once("../classes/DeleteArticle.php");
+    $deleteArticle = new DeleteArticle();
+  
+    $articleId = isset($_GET['article_id']) ? $_GET['article_id'] : 0;
+    
+    if($articleId > 0) {   
+      $deleteArticle->deleteArticle($articleId);
+    } else {
+      echo "none";
+    }
+  
+    //输出删除文章时的错误及提示信息
+    if (isset($deleteArticle)) {
+      if ($deleteArticle->errors) {
+          foreach ($deleteArticle->errors as $error) {
+              echo $error;
+          }
+      }
+      if ($deleteArticle->messages) {
+          foreach ($deleteArticle->messages as $message) {
+              echo $message;
+          }
+      }
+    }
+  ?>
+
   <script>
     function delete(str) {
       var xmlhttp;
@@ -83,19 +99,5 @@
     //   }
     // }
   </script>
-</head>
-<body>
-  <div class="mainpart">
-    <table calss="table">
-      <?php
-       $selectArticle->selectAllTitle();
-      ?> 
-    </table>
-  </div>
-  <div class="list-group">
-    <?php  
-      $selectArticle->selectAllTitle();
-    ?>
-  </div>
 </body>
 </html>
