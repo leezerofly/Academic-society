@@ -10,7 +10,7 @@
     if($articleId > 0) {   
       $deleteArticle->deleteArticle($articleId);
     } else {
-      echo "none";
+      echo "未传入要删除的文章id";
     }
 
     // $deleteArticle->deleteArticle($articleId);

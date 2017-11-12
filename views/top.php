@@ -53,7 +53,7 @@ $login = new Login();
                                 echo "<a href=\"/views/adminArticle.php\" class=\"btn btn-default btn-xs\">管理文章</a>";
                             }
 
-                            echo "<a href=\"/views/addArticle.php\" class=\"btn btn-default btn-xs\">发表文章</a>";
+                            echo "<a href=\"/views/articleInput.php\" class=\"btn btn-default btn-xs\">发表文章</a>";
                         } else {
                             echo "<a href=\"/views/not_logged_in.php\" class=\"btn btn-default btn-sm\">注册与登录</a>";
                         }
