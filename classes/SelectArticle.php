@@ -74,7 +74,7 @@
                     "</a>";
             } 
 
-            // if user has been added successfully
+            // 如果查询成功
             if ($row) {
                 $this->messages[] = "查询成功！";
             } else {
@@ -112,7 +112,7 @@
                 <a href=\"/views/adminArticle.php?article_id=".$row["article_id"]."\">删除</a>";
           } 
 
-          // if user has been added successfully
+          // 如果查询成功
           if ($row) {
               $this->messages[] = "查询成功！";
           } else {
@@ -139,21 +139,22 @@
 
         //数据库正常连接
         if (!$this->db_connection->connect_errno) {
-
-            $sql = "SELECT * FROM article WHERE article_id='".$articleId."'";
+            
+            //内连接查询数据库表article和users
+            $sql = "SELECT * FROM article,users WHERE article_id='".$articleId."' AND article_user_id=user_id";
             $result = $this->db_connection->query($sql); 
-            // $result = mysqli_query($sql);  
           
             if ($result->num_rows > 0) {
               // 输出数据
               while($row = $result->fetch_assoc()) {
+                //帖子详情：内容，发帖人，发帖时间
                 echo "<div class=\"mainpart\">
-                  <h1 class=\"title\">".$row['article_title']."</h1>
                   <div class=\"content\">"
                   .$row['article_content'].
                   "</div>
-                  <div class=\"bottom\">"
-                  .$row['article_time'].
+                  <div class=\"bottom\">
+                  发帖人：".$row['user_name'].
+                  "发帖时间：".$row['article_time'].
                   "</div>
                 </div>";
               }
@@ -196,11 +197,11 @@
                 // 输出数据
                 while($row = $result->fetch_assoc()) {
                 echo "<div class=\"mainpart\">
-                    <h1 class=\"title\">".$row['article_title']."</h1>
                     <div class=\"content\">"
                     .$row['article_content'].
                     "</div>
-                    <div class=\"bottom\">"
+                    <div class=\"bottom\">
+                    发布时间："
                     .$row['article_time'].
                     "</div>
                 </div>";
