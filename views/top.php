@@ -51,7 +51,7 @@ $login = new Login();
                             
                             //若已登录，判断是不是管理员
                             if($login->isAdmin() == true) {
-                                echo "<a href=\"/views/adminArticle.php\" class=\"btn btn-default btn-xs\">管理文章</a>";
+                                echo "<a href=\"/views/manageArticle.php\" class=\"btn btn-default btn-xs\">管理文章</a>";
                             }
                         } else {
                             echo "<a href=\"/views/not_logged_in.php\" class=\"btn btn-default btn-sm\">注册与登录</a>";

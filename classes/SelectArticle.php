@@ -108,7 +108,7 @@
                     "<p>".$row["article_title"]."</p>".
                     $row["article_time"].
                 "</a>
-                <a href=\"/views/deleteArticle.php?article_id=".$row["article_id"]."\" class=\"btn btn-default col-md-1\" onclick=\"return confirmDel()\">删除</a>";
+                <a href=\"/views/deleteArticle.php?article_id=".$row["article_id"]."\" class=\"btn btn-default col-md-1 btn-article-del\" onclick=\"return confirmDel()\">删除</a>";
           } 
 
           // 如果查询成功
@@ -148,14 +148,14 @@
               while($row = $result->fetch_assoc()) {
                 //帖子详情：内容，发帖人，发帖时间
                 echo "<div class=\"mainpart\">
-                  <div class=\"content\">"
-                  .$row['article_content'].
-                  "</div>
-                  <br/>
-                  <div class=\"bottom\">
-                  发帖人：".$row['user_name'].
-                  "发帖时间：".$row['article_time'].
-                  "</div>
+                    <div class=\"article-info\">
+                        作者：".$row['user_name'].
+                        "&nbsp;&nbsp;&nbsp;&nbsp;
+                        发布时间：".$row['article_time'].
+                    "</div>
+                    <div class=\"content\">"
+                    .$row['article_content'].
+                    "</div>
                 </div>";
               }
             }
@@ -197,13 +197,11 @@
                 // 输出数据
                 while($row = $result->fetch_assoc()) {
                 echo "<div class=\"mainpart\">
+                    <div class=\"article-info\">
+                        发布时间：".$row['article_time'].
+                    "</div>
                     <div class=\"content\">"
                     .$row['article_content'].
-                    "</div>
-                    <br/>
-                    <div class=\"bottom\">
-                    发布时间："
-                    .$row['article_time'].
                     "</div>
                 </div>";
                 }

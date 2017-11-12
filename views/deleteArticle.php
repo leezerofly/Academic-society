@@ -46,7 +46,7 @@
         <?php
             echo "</p>
             <div class=\"text-center\">
-                <a href=\"adminArticle.php\" class=\"btn btn-default btn-lg\">继续管理</a>
+                <a href=\"manageArticle.php\" class=\"btn btn-default btn-lg\">继续管理</a>
                 <a href=\"/index.php\" class=\"btn btn-default btn-lg\">返回首页</a>
             </div>"
         ?>
