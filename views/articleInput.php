@@ -25,14 +25,15 @@
 </head>
 <body>
   <div class="mainpart">
-    <form  action="addArticle.php" method="post">
+    <form action="addArticle.php" method="post">
+      <div class="row">
         <!-- 文章标题 -->
-        <div class="form-group">
+        <div class="form-group col-md-9">
             <label for="articleTitle">文章标题</label>
             <input type="text" class="form-control" id="articleTitle" name="articleTitle" placeholder="请输入文章标题" required>
         </div>
         <!-- 文章类型 -->
-        <div class="form-group">
+        <div class="form-group col-md-3">
             <label for="articleTypeId">文章类型</label>
             <select class="form-control" id="articleTypeId" name="articleTypeId"  >
                 <option value ="1">学会新闻</option>
@@ -53,6 +54,7 @@
                 ?>
             </select>
         </div>
+      </div>
 
         <!-- 引入ueditor -->
         <script id="editor" name="articleContent" type="text/plain" style="width:100%;height:500px;"></script>
