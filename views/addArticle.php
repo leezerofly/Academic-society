@@ -21,7 +21,10 @@
 <body>
     <div class="mainpart">
         <?php
-            echo $_SESSION['user_name']."<br/>";
+         echo "<p class=\"lead text-center\">"
+        ?>
+        <?php
+            // echo $_SESSION['user_name']."<br/>";
             print_r($_POST["articleTitle"]."<br/>");
             //输出错误及提示信息
             if (isset($addArticle)) {
@@ -36,6 +39,13 @@
                     }
                 }
             }
+        ?>
+        <?php
+         echo "</p>
+         <div class=\"text-center\">
+            <a href=\"articleInput.php\" class=\"btn btn-default btn-lg\">继续发表</a>
+            <a href=\"/index.php\" class=\"btn btn-default btn-lg\">返回首页</a>
+         </div>"
         ?>
     </div>
 </body>

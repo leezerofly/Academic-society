@@ -101,7 +101,7 @@
 
           // 根据文章类型id article_type_id 倒序查询top5的文章标题 article_title       
           $sql = "SELECT * FROM article ;";
-          $result = $this->db_connection->query($sql);
+          $result = $this->db_connection->query($sql);      
 
           while($row=$result->fetch_assoc()){
             echo "<a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\" class=\"list-group-item col-md-11\">".

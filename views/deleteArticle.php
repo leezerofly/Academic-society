@@ -25,6 +25,9 @@
 </head>
 <body>
     <div class="mainpart">
+        <?php
+            echo "<p class=\"lead text-center\">"
+        ?>
         <?php  
         //输出错误及提示信息
         if (isset($deleteArticle)) {
@@ -39,6 +42,13 @@
                 }
             }
         }
+        ?>
+        <?php
+            echo "</p>
+            <div class=\"text-center\">
+                <a href=\"adminArticle.php\" class=\"btn btn-default btn-lg\">继续管理</a>
+                <a href=\"/index.php\" class=\"btn btn-default btn-lg\">返回首页</a>
+            </div>"
         ?>
     </div>
 </body>
