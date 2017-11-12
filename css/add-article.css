@@ -2,3 +2,9 @@
   width: 60%;
   margin: auto;
 }
+
+.btn-publish {
+  width: 30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
