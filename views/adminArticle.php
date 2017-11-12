@@ -32,7 +32,7 @@
   
 </head>
 <body>
-  <div class="list-group article-list">
+  <div class="row list-group article-list">
     <?php  
       $selectArticle->selectAllTitle();
     ?>
