@@ -1,4 +1,11 @@
 .bottom {
-  /* height: 100px; */
   background-color: black;
+}
+
+.page-content {
+  padding-top:20px; 
+}
+
+.thumbnail {
+  height: 50px;
 }
