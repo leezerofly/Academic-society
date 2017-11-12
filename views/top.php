@@ -19,7 +19,7 @@ $login = new Login();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- 引入 Bootstrap -->
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link href="/framework/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@ $login = new Login();
             </div>
         </div>
         <nav class="navbar navbar-inverse" role="navigation">
-            <div class="container-fluid">
+            <div class="container">
                 <div>
                     <ul class="nav navbar-nav font3">
                         <li><a href="/index.php">网站首页</a></li>                            

@@ -41,21 +41,16 @@
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <img src="img/2016013008584330.jpg" alt="...">
-                <div class="carousel-caption">
+                <!-- 可加文字 -->
+                <!-- <div class="carousel-caption">
                     ...
-                </div>
+                </div> -->
             </div>
             <div class="item">
                 <img src="img/2016013008584330.jpg" alt="...">
-                <div class="carousel-caption">
-                    ...
-                </div>
             </div>
             <div class="item">
                 <img src="img/2016013008584330.jpg" alt="...">
-                <div class="carousel-caption">
-                    ...
-                </div>
             </div>
         </div>
         

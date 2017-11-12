@@ -3,7 +3,7 @@
 }
 
 .topContent {
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
 
@@ -24,7 +24,7 @@ nav div li:hover{
   background-color: #f13a3a;
 }
 
-.container-fluid {
+.container {
   width:870px; 
   margin: auto;
 }
