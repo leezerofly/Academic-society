@@ -70,11 +70,10 @@
         
         <div class="col-md-6 board">         
             <div class="board-title">
-                <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">学会新闻</span>
-                <a href="/views/articleFromTypeAll.php?article_type_id=1" class="btn btn-default btn-xs pull-right">更多></a>
+                <a href="/views/articleFromTypeAll.php?article_type_id=1" class="btn btn-default btn-xs pull-right more">更多></a>
             </div>
-            <div class="list-group">
+            <div class="list-group text-hidden">
                 <?php  
                     $selectArticle->selectArticleTitle(1);
                 ?>
@@ -83,11 +82,10 @@
 
         <div class="col-md-6 board">         
             <div class="board-title">
-                <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">通知公告</span>
-                <a href="/views/articleFromTypeAll.php?article_type_id=2" class="btn btn-default btn-xs pull-right">更多</a>
+                <a href="/views/articleFromTypeAll.php?article_type_id=2" class="btn btn-default btn-xs pull-right more">更多></a>
             </div>
-            <div class="list-group">
+            <div class="list-group text-hidden">
                 <?php  
                     $selectArticle->selectArticleTitle(2);
                 ?>
@@ -96,11 +94,10 @@
 
         <div class="col-md-6 board">         
             <div class="board-title">
-                <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">文章类型3</span>
-                <a href="/views/articleFromTypeAll.php?article_type_id=3" class="btn btn-default btn-xs pull-right">更多</a>
+                <a href="/views/articleFromTypeAll.php?article_type_id=3" class="btn btn-default btn-xs pull-right more">更多></a>
             </div>
-            <div class="list-group">
+            <div class="list-group text-hidden">
                 <?php  
                     $selectArticle->selectArticleTitle(3);
                 ?>
@@ -109,11 +106,10 @@
 
         <div class="col-md-6 board">         
             <div class="board-title">
-                <span class="title-left"><img src="img/titleLeft.png" alt=""></span>
                 <span class="font4">文章类型4</span>
-                <a href="/views/articleFromTypeAll.php?article_type_id=4" class="btn btn-default btn-xs pull-right">更多</a>
+                <a href="/views/articleFromTypeAll.php?article_type_id=4" class="btn btn-default btn-xs pull-right more">更多></a>
             </div>
-            <div class="list-group">
+            <div class="list-group text-hidden">
                 <?php  
                     $selectArticle->selectArticleTitle(4);
                 ?>

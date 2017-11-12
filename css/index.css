@@ -5,15 +5,16 @@
 
 .article-list {
   width: 60%;
-  margin: 15px auto;
+  margin: 22px auto;
   background: #ffffff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
   border-radius: 3px; 
 }
 
 .board {
-  height: 400px;
+  height: 402px;
   overflow: hidden; /*自动隐藏文字*/
+  margin: 10px 0;
 }
 
 .text-hidden {
@@ -23,8 +24,11 @@
 }
 
 .board-title {
-  height: 45px;
-  line-height: 45px;
+  height: 24px;
+  line-height: 24px;
+  border-left: 3px solid #f13a3a;
+  padding-left: 13px;
+  margin: 10px 0;
 }
 
 .title-left {
@@ -33,5 +37,5 @@
 }
 
 .more {
-  float: right;
+  margin-top: 1px;
 }
