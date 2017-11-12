@@ -70,8 +70,6 @@
         } else {
             $this->errors[] = "数据库连接失败。";
         }
-        echo $_SESSION['user_name']."<br/>";
-        print_r($_POST["articleTitle"]."<br/>");
       }
     }
   }
