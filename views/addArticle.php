@@ -77,7 +77,30 @@
         <script id="editor" name="articleContent" type="text/plain" style="width:100%;height:500px;"></script>
 
         <!-- 发表按钮 -->
-        <input type="submit" class="btn btn-info btn-publish center-block" name="addBtn" value="发表"/>
+        <!-- 按钮触发模态框 -->
+        <button class="btn btn-info btn-publish center-block" data-toggle="modal" data-target="#myModal">
+        开始演示模态框
+        </button>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-2" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+      
+        <button type="submit" class="btn btn-info btn-publish center-block" name="addBtn">发表</button>
     </form>
   </div>
 

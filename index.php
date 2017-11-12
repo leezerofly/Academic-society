@@ -67,6 +67,7 @@
     
     <!-- 各文章列表 -->
     <div class="row article-list">
+        
         <div class="col-md-6 board">         
             <div class="board-title">
                 <span class="title-left"><img src="img/titleLeft.png" alt=""></span>

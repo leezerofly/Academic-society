@@ -67,37 +67,14 @@
   ?>
 
   <script>
-    function delete(str) {
-      var xmlhttp;
-      if (window.XMLHttpRequest)
-      {
-        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-        xmlhttp=new XMLHttpRequest();
-      }
-      else
-      {
-        // IE6, IE5 浏览器执行代码
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange=function()
-      {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-          document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-        }
-      }
-      xmlhttp.open("GET","deleteArticle.php?article_id="+str,true);
-      xmlhttp.send();
-    }
-
-    // function confirmDel() {
-    //   var msg = "您真的确定要删除吗？\n\n请确认！";
-    //   if (confirm(msg)==true){
-    //     return true;
-    //   }else{
-    //     return false;
-    //   }
-    // }
+    function confirmDel() {  
+      var msg = "确定删除该条数据？";  
+      if (confirm(msg)==true){  
+          return true;  
+      }else{  
+          return false;  
+      }  
+    }   
   </script>
 </body>
 </html>

@@ -86,7 +86,7 @@
         }
     }
 
-    // 管理员读取全部文章并生成链接
+    // 管理员读取全部文章并生成链接和删除按钮
     public function selectAllTitle() {
         //连接数据库
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -108,8 +108,7 @@
                     "<p>".$row["article_title"]."</p>".
                     $row["article_time"].
                 "</a>
-                <!-- <button class=\"\" onclick=\"delete(".$row["article_id"].")\">删除</button>-->
-                <a href=\"/views/adminArticle.php?article_id=".$row["article_id"]."\">删除</a>";
+                <a href=\"/views/adminArticle.php?article_id=".$row["article_id"]."\" onclick=\"return confirmDel()\">删除</a>";
           } 
 
           // 如果查询成功
@@ -152,6 +151,7 @@
                   <div class=\"content\">"
                   .$row['article_content'].
                   "</div>
+                  <br/>
                   <div class=\"bottom\">
                   发帖人：".$row['user_name'].
                   "发帖时间：".$row['article_time'].
@@ -172,7 +172,7 @@
         }
     }
 
-    // 根据文章type直接读取该类第一篇文章内容
+    // 根据文章type直接读取该类第一篇文章内容，用于学会各类通知
     public function selectArticleFromType() {
 
         $articleTypeId = isset($_GET['article_type_id'])? $_GET['article_type_id'] : 0; 
@@ -200,6 +200,7 @@
                     <div class=\"content\">"
                     .$row['article_content'].
                     "</div>
+                    <br/>
                     <div class=\"bottom\">
                     发布时间："
                     .$row['article_time'].
