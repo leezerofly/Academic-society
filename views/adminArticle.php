@@ -38,35 +38,8 @@
     ?>
   </div>
 
-  <?php
-    // 引入DeleteArticle类
-    require_once("../classes/DeleteArticle.php");
-    $deleteArticle = new DeleteArticle();
-  
-    $articleId = isset($_GET['article_id']) ? $_GET['article_id'] : 0;
-    
-    if($articleId > 0) {   
-      $deleteArticle->deleteArticle($articleId);
-    } else {
-      echo "none";
-    }
-  
-    //输出删除文章时的错误及提示信息
-    if (isset($deleteArticle)) {
-      if ($deleteArticle->errors) {
-          foreach ($deleteArticle->errors as $error) {
-              echo $error;
-          }
-      }
-      if ($deleteArticle->messages) {
-          foreach ($deleteArticle->messages as $message) {
-              echo $message;
-          }
-      }
-    }
-  ?>
-
   <script>
+    // 确认弹框
     function confirmDel() {  
       var msg = "确定删除该条数据？";  
       if (confirm(msg)==true){  

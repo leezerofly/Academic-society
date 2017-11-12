@@ -108,7 +108,7 @@
                     "<p>".$row["article_title"]."</p>".
                     $row["article_time"].
                 "</a>
-                <a href=\"/views/adminArticle.php?article_id=".$row["article_id"]."\" onclick=\"return confirmDel()\">删除</a>";
+                <a href=\"/views/deleteArticle.php?article_id=".$row["article_id"]."\" onclick=\"return confirmDel()\">删除</a>";
           } 
 
           // 如果查询成功

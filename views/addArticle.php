@@ -76,31 +76,8 @@
         <!-- 引入ueditor -->
         <script id="editor" name="articleContent" type="text/plain" style="width:100%;height:500px;"></script>
 
-        <!-- 发表按钮 -->
-        <!-- 按钮触发模态框 -->
-        <button class="btn btn-info btn-publish center-block" data-toggle="modal" data-target="#myModal">
-        开始演示模态框
-        </button>
-        <!-- 模态框（Modal） -->
-        <div class="modal fade" id="myModal" tabindex="-2" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                    <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-      
-        <button type="submit" class="btn btn-info btn-publish center-block" name="addBtn">发表</button>
+        <!-- 发表按钮 -->      
+        <button type="submit" class="btn btn-info btn-publish center-block" name="addBtn" onclick="confirmPub()">发表</button>
     </form>
   </div>
 
@@ -139,6 +116,16 @@
         initialFrameHeight:300  
         //更多其他参数，请参考ueditor.config.js中的配置项  
     });
+
+    // 确认弹框
+    function confirmPub() {  
+      var msg = "确定发表文章吗？";  
+      if (confirm(msg)==true){  
+          return true;  
+      }else{  
+          return false;  
+      }  
+    }  
   </script>
 </body>
 </html>
