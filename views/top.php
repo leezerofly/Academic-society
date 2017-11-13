@@ -38,9 +38,10 @@ $login = new Login();
     <header>
         <div class="top">
             <div class="topContent">
-                <h1 class="fontColor1">Academic</h1>
-                <h1>society</h1>
-                <div class="signIn font2 fontColor1">
+                <span>江西省</span>
+                <span class="font-color-red">数学学会</span>
+                <span class="font-color-red">Jiangxi Mathematical Society</span>
+                <div class="sign-in font16 font-color-red">
                     <?php                  
                         // 判断是否已登录:
                         if ($login->isUserLoggedIn() == true) {
@@ -63,26 +64,13 @@ $login = new Login();
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="container">
                 <div>
-                    <ul class="nav navbar-nav font3">
+                    <ul class="nav navbar-nav font20">
                         <li><a href="/index.php">网站首页</a></li>                            
-                        <li><a href="/views/articleFromType.php?article_type_id=5">组织机构</a></li>
-                        <li><a href="/views/articleFromType.php?article_type_id=6">理事名单</a></li>
-                        <li><a href="/views/articleFromType.php?article_type_id=7">学会章程</a></li>                    
-                        <li><a href="/views/articleFromType.php?article_type_id=8">政策文件</a></li>                    
-                        <li><a href="/views/articleFromType.php?article_type_id=9">学会名人</a></li>                    
-                        <li><a href="/views/articleFromType.php?article_type_id=10">培训信息</a></li> 
-                        <li class="dropdown">
-                            <a href="/views/notification.php" class="dropdown-toggle" data-toggle="dropdown">
-                                信息通知
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/views/regulation.php">学会新闻</a></li>
-                                <li><a href="/views/regulation.php">通知公告</a></li>
-                                <li><a href="/views/regulation.php">教学研究</a></li>
-                                <li><a href="/views/regulation.php">学术研讨</a></li>
-                            </ul>
-                        </li>                      
+                        <li><a href="/views/articleFromType.php?article_type_id=5">学会简介</a></li>
+                        <li><a href="/views/articleFromType.php?article_type_id=6">学会章程</a></li>
+                        <li><a href="/views/articleFromType.php?article_type_id=7">组织架构</a></li>                    
+                        <li><a href="/views/articleFromType.php?article_type_id=8">新闻资讯</a></li>                    
+                        <li><a href="/views/articleFromType.php?article_type_id=9">下载专区</a></li>                      
                     </ul>
                 </div>
             </div>

@@ -1,27 +1,31 @@
-.font1 {
+.font14 {
   font-size: 14px;
 }
 
-.font2 {
+.font16 {
   font-size: 16px;
 }
 
-.font3 {
+.font18 {
   font-size: 18px;
 }
 
-.font4 {
+.font20 {
   font-size: 20px;
 }
 
-.fontColor1 {
+.font22 {
+  font-size: 22px;
+}
+
+.font24 {
+  font-size: 24px;
+}
+
+.font-color-red {
   color: #f13a3a !important;
 }
 
-.font-color2 {
+.font-color-white {
   color: white;
 }
-
-/* h1.fontColor1 {
-  color: white;
-} */
