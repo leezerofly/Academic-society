@@ -22,8 +22,8 @@
 <body>
   <div class="list-group article-list">
     <?php  
-      // 根据typeid查询文章内容
-      $selectArticle->selectArticleTitleAll($articleTypeId);
+      // 根据typeid查询一类文章所有文章
+      $selectArticle->selectArticleTitleType($articleTypeId);
     ?>
   </div>
 </body>

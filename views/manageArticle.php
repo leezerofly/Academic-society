@@ -34,10 +34,47 @@
   
 </head>
 <body>
-  <div class="row list-group article-list">
-    <?php  
-      $selectArticle->selectAllTitle();
-    ?>
+  <div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">学会新闻</a></li>
+      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">通知公告</a></li>
+      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">教学研究</a></li>
+      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">学术研讨</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="home">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(1);
+          ?>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="profile">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(2);
+          ?>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="messages">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(3);
+          ?>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="settings">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(4);
+          ?>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="box center-block" id="box"></div>

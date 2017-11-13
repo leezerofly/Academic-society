@@ -50,8 +50,8 @@
         }
     }
 
-    // 首页按照文章分类读取每类所有文章并生成链接
-    public function selectArticleTitleAll($articleTypeId) {
+    // 首页，点击更多按钮，按照文章分类读取每类所有文章并生成链接
+    public function selectArticleTitleType($articleTypeId) {
         //连接数据库
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -63,7 +63,7 @@
         //数据库正常连接
         if (!$this->db_connection->connect_errno) {
 
-            // 根据文章类型id article_type_id 倒序查询top5的文章标题 article_title       
+            // 根据文章类型id article_type_id 倒序查询文章标题 article_title       
             $sql = "SELECT * FROM article WHERE article_type_id = '" . $articleTypeId . "' ORDER BY article_id DESC;";
             $result = $this->db_connection->query($sql);      
 
@@ -72,6 +72,43 @@
                         "<p>".$row["article_title"]."</p>".
                         $row["article_time"].
                     "</a>";
+            } 
+
+            // 如果查询成功
+            if ($row) {
+                $this->messages[] = "查询成功！";
+            } else {
+                $this->errors[] = "对不起，查询失败，请您返回重试。";
+            }
+
+        } else {
+            $this->errors[] = "数据库连接失败。";
+        }
+    }
+
+    // 管理员按照文章分类读取每类所有文章并生成链接及删除按钮
+    public function manageSelectArticleTitleType($articleTypeId) {
+        //连接数据库
+        $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+        //将字符改为utf8并检验
+        if (!$this->db_connection->set_charset("utf8")) {
+            $this->errors[] = $this->db_connection->error;
+        }
+
+        //数据库正常连接
+        if (!$this->db_connection->connect_errno) {
+
+            // 根据文章类型id article_type_id 倒序查询文章标题 article_title       
+            $sql = "SELECT * FROM article WHERE article_type_id = '" . $articleTypeId . "' ORDER BY article_id DESC;";
+            $result = $this->db_connection->query($sql);      
+
+            while($row=$result->fetch_assoc()){
+                echo "<a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\" class=\"list-group-item col-md-11\">".
+                        "<p>".$row["article_title"]."</p>".
+                        $row["article_time"].
+                    "</a>
+                    <a href=\"/views/deleteArticle.php?article_id=".$row["article_id"]."\" class=\"btn btn-default col-md-1 btn-article-del\" onclick=\"return confirmDel()\">删除</a>";
             } 
 
             // 如果查询成功

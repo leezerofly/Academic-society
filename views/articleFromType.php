@@ -6,7 +6,7 @@
   
   $selectArticle = new SelectArticle();
 
-  // 根据type id查询文章内容
+  // 根据type id直接查询倒数第一篇文章内容
   $selectArticle->selectArticleFromType();
 ?>
 <!DOCTYPE html>
