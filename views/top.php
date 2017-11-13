@@ -38,22 +38,27 @@ $login = new Login();
     <header>
         <div class="top">
             <div class="topContent">
-                <span>江西省</span>
-                <span class="font-color-red">数学学会</span>
-                <span class="font-color-red">Jiangxi Mathematical Society</span>
-                <div class="sign-in font16 font-color-red">
+                <div class="website-title">
+                    <span class="font20">江西省</span><span class="font24 font-color-red">数学学会</span>
+                    <p class="font-color-red">Jiangxi Mathematical Society</p>
+                </div>
+                <div class="user-info font16 font-color-red">
                     <?php                  
                         // 判断是否已登录:
                         if ($login->isUserLoggedIn() == true) {
-                            include($webroot.'/views/logged_in.php');
-
-                            echo "<br/>
-                            <a href=\"/views/articleInput.php\" class=\"btn btn-default btn-xs\">发表文章</a>";
+                            // 若已登录
+                            echo "<p class=\"\">
+                                ".$_SESSION['user_name']."，您好！
+                                <a href=\"/index.php?logout\" class=\"btn btn-xs btn-danger\">退出</a>
+                            </p>
+                            <div>
+                                <a href=\"/views/articleInput.php\" class=\"btn btn-default btn-xs\">发表文章</a>";
                             
-                            //若已登录，判断是不是管理员
+                            //判断是不是管理员
                             if($login->isAdmin() == true) {
-                                echo "<a href=\"/views/manageArticle.php\" class=\"btn btn-default btn-xs\">管理文章</a>";
+                                echo "<a href=\"/views/manageArticle.php\" class=\"btn btn-default btn-xs pull-right\">管理文章</a>";
                             }
+                            echo "</div>";
                         } else {
                             echo "<a href=\"/views/not_logged_in.php\" class=\"btn btn-default btn-sm\">注册与登录</a>";
                         }
@@ -61,18 +66,16 @@ $login = new Login();
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-inverse" role="navigation">
+        <nav class="navbar navbar-inverse font20" role="navigation">
             <div class="container">
-                <div>
-                    <ul class="nav navbar-nav font20">
-                        <li><a href="/index.php">网站首页</a></li>                            
-                        <li><a href="/views/articleFromType.php?article_type_id=5">学会简介</a></li>
-                        <li><a href="/views/articleFromType.php?article_type_id=6">学会章程</a></li>
-                        <li><a href="/views/articleFromType.php?article_type_id=7">组织架构</a></li>                    
-                        <li><a href="/views/articleFromType.php?article_type_id=8">新闻资讯</a></li>                    
-                        <li><a href="/views/articleFromType.php?article_type_id=9">下载专区</a></li>                      
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.php">网站首页</a></li>                            
+                    <li><a href="/views/articleFromType.php?article_type_id=5">学会简介</a></li>
+                    <li><a href="/views/articleFromType.php?article_type_id=6">学会章程</a></li>
+                    <li><a href="/views/articleFromType.php?article_type_id=7">组织架构</a></li>                    
+                    <li><a href="/views/articleFromType.php?article_type_id=8">新闻资讯</a></li>                    
+                    <li><a href="/views/articleFromType.php?article_type_id=9">下载专区</a></li>                      
+                </ul>
             </div>
         </nav>
     </header>

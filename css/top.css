@@ -7,9 +7,15 @@
   height: 80px;
   margin: auto;
 }
+.website-title {
+  display: inline-block;
+  margin-top: 10px;
+}
 
-.sign-in {
+.user-info {
   float: right;
+  line-height: 22px;
+  margin-top: 10px;
 }
 
 nav {
@@ -26,6 +32,5 @@ nav div li:hover{
 }
 
 .container {
-  width:870px; 
-  margin: auto;
+  width: 690px;
 }

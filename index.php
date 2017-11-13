@@ -94,7 +94,7 @@
 
         <div class="col-md-6 board">         
             <div class="board-title">
-                <span class="font20">文章类型3</span>
+                <span class="font20">教学研究</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=3" class="btn btn-default btn-xs pull-right more">更多></a>
             </div>
             <div class="list-group text-hidden">
@@ -106,7 +106,7 @@
 
         <div class="col-md-6 board">         
             <div class="board-title">
-                <span class="font20">文章类型4</span>
+                <span class="font20">学术研讨</span>
                 <a href="/views/articleFromTypeAll.php?article_type_id=4" class="btn btn-default btn-xs pull-right more">更多></a>
             </div>
             <div class="list-group text-hidden">

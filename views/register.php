@@ -26,7 +26,7 @@ if (isset($registration)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>注册</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Bootstrap -->
@@ -40,7 +40,7 @@ if (isset($registration)) {
     <div class="container">
         <!-- register form -->
         <form class="form-signup" id="usersignup" method="post" action="register.php" name="registerform">
-            <h2 class="form-signup-heading">Register</h2>
+            <h2 class="form-signup-heading">注册</h2>
 
             <!-- the user name input field uses a HTML5 pattern check -->
             <!-- <label for="login_input_username">账号（仅可使用字母或数字，2~64个字）</label> -->

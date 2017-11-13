@@ -38,17 +38,16 @@
             <select class="form-control" id="articleTypeId" name="articleTypeId"  >
                 <option value ="1">学会新闻</option>
                 <option value ="2">通知公告</option>
-                <option value ="3">文章类型3</option>
-                <option value ="4">文章类型4</option>
+                <option value ="3">教学研究</option>
+                <option value ="4">学术研讨</option>
                 <?php
                 if($login->isAdmin()) {
                     echo "
-                    <option value =\"5\">组织机构</option>
-                    <option value =\"6\">理事名单</option>
-                    <option value =\"7\">学会章程</option>
-                    <option value =\"8\">政策文件</option>
-                    <option value =\"9\">学会名人</option>
-                    <option value =\"10\">培训信息</option>
+                    <option value =\"5\">学会简介</option>
+                    <option value =\"6\">学会章程</option>
+                    <option value =\"7\">组织架构</option>
+                    <option value =\"8\">新闻资讯</option>
+                    <option value =\"9\">下载专区</option>
                     ";
                 }
                 ?>
