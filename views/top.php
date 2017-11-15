@@ -39,7 +39,7 @@ $login = new Login();
         <div class="top">
             <div class="topContent">
                 <div class="website-title">
-                    <span class="font24">江西省</span><span class="font28 font-color-red">数学学会</span>
+                    <span class="font24">江西省</span><span class="font28 font-color-red">数学会</span>
                     <p class="font-color-red">Jiangxi Mathematical Society</p>
                 </div>
                 <div class="user-info font18 font-color-red">
@@ -69,7 +69,7 @@ $login = new Login();
         <nav class="navbar-inverse font20" role="navigation">
             <div class="navbar-self">
                 <ul class="nav navbar-nav row text-center">
-                    <li class="col-md-2"><a href="/index.php">网站首页</a></li>                            
+                    <li class="col-md-2"><a href="/index.php">学会首页</a></li>                            
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=5">学会简介</a></li>
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=6">学会章程</a></li>
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=7">组织架构</a></li>                    

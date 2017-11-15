@@ -30,7 +30,7 @@
         <!-- 文章标题 -->
         <div class="form-group col-md-9">
             <label for="articleTitle">文章标题</label>
-            <input type="text" class="form-control" id="articleTitle" name="articleTitle" placeholder="请输入文章标题（请不要超过20个字）" required>
+            <input type="text" class="form-control" id="articleTitle" name="articleTitle" placeholder="请输入文章标题（文章标题与内容详情的标题不同，请尽量精简）" required>
         </div>
         <!-- 文章类型 -->
         <div class="form-group col-md-3">

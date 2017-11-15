@@ -185,7 +185,7 @@
               while($row = $result->fetch_assoc()) {
                 //帖子详情：内容，发帖人，发帖时间
                 echo "<div class=\"mainpart\">
-                    <div class=\"article-info\">
+                    <div class=\"article-info font16\">
                         作者：".$row['user_name'].
                         "&nbsp;&nbsp;&nbsp;&nbsp;
                         发布时间：".$row['article_time'].
@@ -234,7 +234,7 @@
                 // 输出数据
                 while($row = $result->fetch_assoc()) {
                 echo "<div class=\"mainpart\">
-                    <div class=\"article-info\">
+                    <div class=\"article-info font16\">
                         发布时间：".$row['article_time'].
                     "</div>
                     <div class=\"content\">"

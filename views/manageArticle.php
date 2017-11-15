@@ -42,10 +42,16 @@
       <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">通知公告</a></li>
       <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">教学研究</a></li>
       <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">学术研讨</a></li>
+      <li role="presentation"><a href="#intro" aria-controls="intro" role="tab" data-toggle="tab">学会简介</a></li>
+      <li role="presentation"><a href="#regulations" aria-controls="regulations" role="tab" data-toggle="tab">学会章程</a></li>
+      <li role="presentation"><a href="#organization" aria-controls="organization" role="tab" data-toggle="tab">组织架构</a></li>
+      <li role="presentation"><a href="#news" aria-controls="news" role="tab" data-toggle="tab">新闻资讯</a></li>
+      <li role="presentation"><a href="#download" aria-controls="download" role="tab" data-toggle="tab">下载专区</a></li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
+
       <div role="tabpanel" class="tab-pane active" id="home">
         <div class="row list-group article-list">
           <?php  
@@ -74,6 +80,42 @@
           ?>
         </div>
       </div>
+      <div role="tabpanel" class="tab-pane" id="intro">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(5);
+          ?>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="regulations">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(6);
+          ?>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="organization">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(7);
+          ?>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="news">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(8);
+          ?>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="download">
+        <div class="row list-group article-list">
+          <?php  
+            $selectArticle->manageSelectArticleTitleType(9);
+          ?>
+        </div>
+      </div>
+
     </div>
   </div>
 

@@ -3,7 +3,9 @@
 }
 
 .page-content {
-  padding-top:20px; 
+  width: 80%;
+  margin: auto;
+  padding-top:25px; 
 }
 
 .thumbnail {

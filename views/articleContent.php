@@ -6,8 +6,6 @@
   
   $selectArticle = new SelectArticle();
 
-  // 根据id查询文章内容
-  $selectArticle->selectArticleFromId();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +18,9 @@
   <link rel="stylesheet" href="/css/article-content.css">
 </head>
 <body>
-  
+  <?php
+    // 根据id查询文章内容
+    $selectArticle->selectArticleFromId();
+  ?>
 </body>
 </html>
