@@ -88,14 +88,20 @@ class Login
                         $_SESSION['user_login_status'] = 1;
                         $_SESSION['user_type'] = $result_row->user_type;
 
+                        // 登录成功后跳转到首页
+                        $url = "../index.php";  
+                        echo "<script>";  
+                        echo "window.location.href='$url'";  
+                        echo "</script>";
+
                     } else {
-                        $this->errors[] = "Wrong password. Try again.";
+                        $this->errors[] = "密码错误，请重试";
                     }
                 } else {
-                    $this->errors[] = "This user does not exist.";
+                    $this->errors[] = "该用户不存在，请检查";
                 }
             } else {
-                $this->errors[] = "Database connection problem.";
+                $this->errors[] = "数据库连接失败";
             }
         }
     }

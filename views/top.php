@@ -60,7 +60,7 @@ $login = new Login();
                             }
                             echo "</div>";
                         } else {
-                            echo "<a href=\"/views/not_logged_in.php\" class=\"btn btn-default btn-sm\">注册与登录</a>";
+                            echo "<a href=\"/views/login.php\" class=\"btn btn-default btn-sm\">注册与登录</a>";
                         }
                     ?>
                 </div>

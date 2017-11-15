@@ -1,17 +1,5 @@
 <?php
-// show potential errors / feedback (from login object)
-if (isset($login)) {
-    if ($login->errors) {
-        foreach ($login->errors as $error) {
-            echo $error;
-        }
-    }
-    if ($login->messages) {
-        foreach ($login->messages as $message) {
-            echo $message;
-        }
-    }
-}
+include("top.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +20,7 @@ if (isset($login)) {
 <body>
     <div class="container">
         <!-- login form box -->
-        <form class="form-signin" method="post" action="../index.php" name="loginform">
+        <form class="form-signin" method="post" action="login.php" name="loginform">
             <h2 class="form-signin-heading">请登录</h2>
             
             <!-- <label for="login_input_username">Username</label> -->
@@ -44,5 +32,22 @@ if (isset($login)) {
             <input class="btn btn-lg btn-primary btn-block" type="submit" name="login" value="登录" />
             <a href="register.php" class="btn btn-lg btn-primary btn-block">注册</a>
         </form>
+        <p class="lead text-center">
+            <?php            
+                // show potential errors / feedback (from login object)
+                if (isset($login)) {
+                    if ($login->errors) {
+                        foreach ($login->errors as $error) {
+                            echo $error;
+                        }
+                    }
+                    if ($login->messages) {
+                        foreach ($login->messages as $message) {
+                            echo $message;
+                        }
+                    }
+                }
+            ?>
+        </p>
     </div>
 </body>
