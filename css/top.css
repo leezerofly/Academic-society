@@ -24,7 +24,7 @@ nav {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: white;
+  color: white !important;
 }
 
 nav div li:hover{
@@ -32,5 +32,5 @@ nav div li:hover{
 }
 
 .container {
-  width: 690px;
+  width: 690px !important;
 }
