@@ -1,11 +1,15 @@
 #carousel-generic {
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 
+article {
+  padding: 25px 0;
+}
+
 .article-list {
-  width: 60%;
-  margin: 22px auto;
+  width: 80%;
+  margin: 25px auto 0;
   background: #ffffff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
   border-radius: 3px; 
