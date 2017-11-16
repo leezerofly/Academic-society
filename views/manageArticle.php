@@ -37,7 +37,7 @@
   <div>
 
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs tab-list" role="tablist">
       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">学会新闻</a></li>
       <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">通知公告</a></li>
       <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">教学研究</a></li>
@@ -118,22 +118,6 @@
 
     </div>
   </div>
-
-  <div class="box center-block" id="box"></div>
-  <script src="/js/paging.js"></script>
-  <script>
-      var setTotalCount = 100;
-      $('#box').paging({
-          initPageNo: 1, // 初始页码
-          totalPages: 20, //总页数
-          totalCount: '合计' + setTotalCount + '条数据', // 条目总数
-          slideSpeed: 600, // 缓动速度。单位毫秒
-          jump: true, //是否支持跳转
-          callback: function(page) { // 回调函数
-              console.log(page);
-          }
-      })
-  </script>
 
   <script>
     // 确认弹框

@@ -19,7 +19,6 @@
   <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
 
   <!-- 引入自定义样式 -->
-  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/add-article.css">
   
 </head>

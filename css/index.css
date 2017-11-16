@@ -9,7 +9,7 @@ article {
 
 .article-list {
   width: 80%;
-  margin: 25px auto 0;
+  margin: 25px auto;
   background: #ffffff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
   border-radius: 3px; 

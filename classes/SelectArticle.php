@@ -86,7 +86,63 @@
         }
     }
 
-    // 管理员按照文章分类读取每类所有文章并生成链接及删除按钮
+    // 管理员按照文章分类id读取每类所有文章的总数,并生成分页插件
+    public function manageSelectArticleNumType($articleTypeId) {
+        //连接数据库
+        $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+        //将字符改为utf8并检验
+        if (!$this->db_connection->set_charset("utf8")) {
+            $this->errors[] = $this->db_connection->error;
+        }
+
+        //数据库正常连接
+        if (!$this->db_connection->connect_errno) {
+
+            // 根据文章类型id article_type_id 倒序查询文章标题 article_title       
+            $sql = "SELECT COUNT(*) AS total FROM article WHERE article_type_id = '" . $articleTypeId . "';";
+            $result = $this->db_connection->query($sql);      
+
+            while($row=$result->fetch_assoc()){
+                echo "                       
+                    <div class=\"box center-block page-list\" id=\"box\"></div>
+                    <script src=\"/js/paging.js\"></script>
+                    <script>
+                        var setTotalCount = ".$row['total'].";
+                        var pageSize = 10;
+                        if(setTotalCount % 10 > 0) {
+                            var totalPages = parseInt(setTotalCount / pageSize) + 1;
+                        } else {
+                            var totalPages = parseInt(setTotalCount / pageSize);
+                        }
+
+                        $('#box').paging({
+                            initPageNo: 1, // 初始页码
+                            totalPages: totalPages, //总页数
+                            totalCount: '合计' + setTotalCount + '条数据', // 条目总数
+                            slideSpeed: 600, // 缓动速度。单位毫秒
+                            jump: true, //是否支持跳转
+                            callback: function(page) { // 回调函数
+                                console.log(page);
+                            }
+                        })
+                    </script>";
+            } 
+
+            // 如果查询成功
+            if ($row) {
+                $this->messages[] = "查询成功！";
+            } else {
+                $this->errors[] = "对不起，查询失败，请您返回重试。";
+            }
+
+        } else {
+            $this->errors[] = "数据库连接失败。";
+        }
+    }
+    
+
+    // 管理员按照文章分类id读取每类所有文章并生成链接及删除按钮
     public function manageSelectArticleTitleType($articleTypeId) {
         //连接数据库
         $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
