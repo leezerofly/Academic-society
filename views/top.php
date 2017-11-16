@@ -74,7 +74,7 @@ $login = new Login();
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=6">学会章程</a></li>
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=7">组织架构</a></li>                    
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=8">新闻资讯</a></li>                    
-                    <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=9">下载专区</a></li>                      
+                    <li class="col-md-2"><a href="/views/articleFromTypeAll.php?article_type_id=9">下载专区</a></li>                      
                 </ul>
             </div>
         </nav>
