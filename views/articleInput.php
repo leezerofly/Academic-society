@@ -2,6 +2,9 @@
   // 引入顶部及导航栏
   // 内含bootstrap和jQuery
   include("top.php");
+  // 引入ManageType类
+  require_once("../classes/ManageType.php");
+  $manageType = new ManageType();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,20 +38,11 @@
         <div class="form-group col-md-3">
             <label for="articleTypeId">文章类型</label>
             <select class="form-control" id="articleTypeId" name="articleTypeId"  >
-                <option value ="1">学会新闻</option>
-                <option value ="2">通知公告</option>
-                <option value ="3">教学研究</option>
-                <option value ="4">学术研讨</option>
                 <?php
-                if($login->isAdmin()) {
-                    echo "
-                    <option value =\"5\">学会简介</option>
-                    <option value =\"6\">学会章程</option>
-                    <option value =\"7\">组织架构</option>
-                    <option value =\"8\">新闻资讯</option>
-                    <option value =\"9\">下载专区</option>
-                    ";
-                }
+                    $result = $manageType->selectArticleType();
+                    while($row=$result->fetch_assoc()){
+                        echo "<option value =\"".$row["type_id"]."\">".$row["type_name"]."</option>";
+                      }
                 ?>
             </select>
         </div>

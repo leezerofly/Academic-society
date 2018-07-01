@@ -43,8 +43,22 @@
     ?>
   </p>
   <div class="row list-group article-list">
-    <?php  
-      $manageType->selectArticleType();
+    <?php
+      $result = $manageType->selectArticleType();   
+
+      while($row=$result->fetch_assoc()){
+        echo "<div class=\"list-group-item col-md-10 font18 list-content list-lineheight\">".
+                $row["type_name"].
+              "</div>
+              <a class=\"btn btn-default col-md-1 btn-article\" onclick=\"return updateArticleTypeName(".$row["type_id"].")\">编辑</a>
+              <a href=\"/views/manageType.php?delete_article_type_id=".$row["type_id"]."\" 
+                class=\"btn btn-default col-md-1 btn-article\" 
+                onclick=\"return confirmDel()\">
+                删除
+              </a>
+            ";
+      }
+      echo "<div class=\"btn btn-default list-group-item col-md-12 list-content list-lineheight font18\" onclick=\"return createArticleTypeName()\">新增分类</div>";
     ?>
   </div>
 

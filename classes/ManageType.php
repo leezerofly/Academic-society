@@ -42,7 +42,7 @@
       }
     }
 
-    // 查询所有分类
+    // 查询所有分类并返回$result
     public function selectArticleType() {
       //连接数据库
       $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -54,27 +54,12 @@
 
       //数据库正常连接
       if (!$this->db_connection->connect_errno) {
-
-        // 根据文章类型id article_type_id 倒序查询top5的文章标题 article_title       
+      
         $sql = "SELECT * FROM article_type ORDER BY type_id;";
         $result = $this->db_connection->query($sql);      
-
-        while($row=$result->fetch_assoc()){
-            echo "<div class=\"list-group-item col-md-10 font18 list-content list-lineheight\">".
-                    $row["type_name"].
-                  "</div>
-                  <a class=\"btn btn-default col-md-1 btn-article\" onclick=\"return updateArticleTypeName(".$row["type_id"].")\">编辑</a>
-                  <a href=\"/views/manageType.php?delete_article_type_id=".$row["type_id"]."\" 
-                    class=\"btn btn-default col-md-1 btn-article\" 
-                    onclick=\"return confirmDel()\">
-                    删除
-                  </a>
-                ";
-        }
-        echo "<div class=\"btn btn-default list-group-item col-md-12 list-content list-lineheight font18\" onclick=\"return createArticleTypeName()\">新增分类</div>";
-
-        if ($row) {
+        if ($result) {
             $this->messages[] = "查询成功！";
+            return $result;
         } else {
             $this->errors[] = "对不起，查询失败，请您返回重试。";
         }
