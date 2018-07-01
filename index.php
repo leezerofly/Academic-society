@@ -2,8 +2,10 @@
     include("views/top.php");
 
     require_once("classes/SelectArticle.php");
-
     $selectArticle = new SelectArticle();
+    // 引入ManageType类
+    require_once("classes/ManageType.php");
+    $manageType = new ManageType();
 
     //输出错误及提示信息
     if (isset($selectArticle)) {
@@ -67,54 +69,20 @@
         
         <!-- 各文章列表 -->
         <div class="row article-list">
-            
-            <div class="col-md-6 board">         
-                <div class="board-title">
-                    <span class="font20">学会新闻</span>
-                    <a href="/views/articleFromTypeAll.php?article_type_id=1" class="btn btn-default btn-xs pull-right more">更多></a>
-                </div>
-                <div class="list-group text-hidden">
-                    <?php  
-                        $selectArticle->selectArticleTitle(1);
-                    ?>
-                </div>
-            </div>
-
-            <div class="col-md-6 board">         
-                <div class="board-title">
-                    <span class="font20">通知公告</span>
-                    <a href="/views/articleFromTypeAll.php?article_type_id=2" class="btn btn-default btn-xs pull-right more">更多></a>
-                </div>
-                <div class="list-group text-hidden">
-                    <?php  
-                        $selectArticle->selectArticleTitle(2);
-                    ?>
-                </div>
-            </div>
-
-            <div class="col-md-6 board">         
-                <div class="board-title">
-                    <span class="font20">教学研究</span>
-                    <a href="/views/articleFromTypeAll.php?article_type_id=3" class="btn btn-default btn-xs pull-right more">更多></a>
-                </div>
-                <div class="list-group text-hidden">
-                    <?php  
-                        $selectArticle->selectArticleTitle(3);
-                    ?>
-                </div>
-            </div>
-
-            <div class="col-md-6 board">         
-                <div class="board-title">
-                    <span class="font20">学术研讨</span>
-                    <a href="/views/articleFromTypeAll.php?article_type_id=4" class="btn btn-default btn-xs pull-right more">更多></a>
-                </div>
-                <div class="list-group text-hidden">
-                    <?php  
-                        $selectArticle->selectArticleTitle(4);
-                    ?>
-                </div>
-            </div>
+            <?php
+                $result = $manageType->selectArticleTypeOffset5();
+                while($row=$result->fetch_assoc()){
+                    echo "<div class=\"col-md-6 board\">         
+                            <div class=\"board-title\">
+                                <span class=\"font20\">".$row["type_name"]."</span>
+                                <a href=\"/views/articleFromTypeAll.php?article_type_id=".$row["type_id"]."\" class=\"btn btn-default btn-xs pull-right more\">更多></a>
+                            </div>
+                            <div class=\"list-group text-hidden\">";
+                    $selectArticle->selectArticleTitle($row["type_id"]);
+                    echo "  </div>
+                        </div>";
+                }
+            ?>
         </div>
     </article>
 

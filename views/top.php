@@ -1,17 +1,14 @@
 <?php
+    $webroot = dirname(dirname(__FILE__));
 
-$webroot = dirname(dirname(__FILE__));
+    require_once($webroot.'/config/db.php');
 
-// include the configs / constants for the database connection
-require_once($webroot.'/config/db.php');
-
-// load the login class
-require_once($webroot.'/classes/Login.php');
-
-// create a login object. when this object is created, it will do all login/logout stuff automatically
-// so this single line handles the entire login process. in consequence, you can simply ...
-$login = new Login();
-
+    require_once($webroot.'/classes/Login.php');
+    $login = new Login();
+    
+    // 引入ManageType类
+    require_once($webroot."/classes/ManageType.php");
+    $manageType = new ManageType();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +36,8 @@ $login = new Login();
         <div class="top">
             <div class="topContent">
                 <div class="website-title">
-                    <span class="font24">江西省</span><span class="font28 font-color-red">数学会</span>
-                    <p class="font-color-red">Jiangxi Mathematical Society</p>
+                    <span class="font28">江西省数学会</span>
+                    <p>Jiangxi Mathematical Society</p>
                 </div>
                 <div class="user-info font18 font-color-red">
                     <?php                  
@@ -72,12 +69,20 @@ $login = new Login();
         <nav class="navbar-inverse font20" role="navigation">
             <div class="navbar-self">
                 <ul class="nav navbar-nav row text-center">
-                    <li class="col-md-2"><a href="/index.php">学会首页</a></li>                            
-                    <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=5">学会简介</a></li>
+                    <li class="col-md-2"><a href="/index.php">学会首页</a></li>
+                    <?php
+                        $result = $manageType->selectArticleTypeLimit5();
+                        while($row=$result->fetch_assoc()){
+                          echo "<li class=\"col-md-2\">
+                                  <a href=\"/views/articleFromType.php?article_type_id=".$row["type_id"]."\">".$row["type_name"]."</a>
+                              </li>";
+                        }
+                    ?>
+                    <!-- <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=5">学会简介</a></li>
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=6">学会章程</a></li>
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=7">组织架构</a></li>                    
                     <li class="col-md-2"><a href="/views/articleFromType.php?article_type_id=8">新闻资讯</a></li>                    
-                    <li class="col-md-2"><a href="/views/articleFromTypeAll.php?article_type_id=9">下载专区</a></li>                      
+                    <li class="col-md-2"><a href="/views/articleFromTypeAll.php?article_type_id=9">下载专区</a></li>                       -->
                 </ul>
             </div>
         </nav>

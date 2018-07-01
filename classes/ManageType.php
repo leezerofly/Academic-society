@@ -68,6 +68,57 @@
       }
     }
 
+    // 查询前5个文章分类
+    public function selectArticleTypeLimit5() {
+      //连接数据库
+      $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+      //将字符改为utf8并检验
+      if (!$this->db_connection->set_charset("utf8")) {
+        $this->errors[] = $this->db_connection->error;
+      }
+
+      //数据库正常连接
+      if (!$this->db_connection->connect_errno) {
+      
+        $sql = "SELECT * FROM article_type ORDER BY type_id LIMIT 5;";
+        $result = $this->db_connection->query($sql);
+        if ($result) {
+            $this->messages[] = "查询成功！";
+            return $result;
+        } else {
+            $this->errors[] = "对不起，查询失败，请您返回重试。";
+        }
+      } else {
+          $this->errors[] = "数据库连接失败。";
+      }
+    }
+
+    // 查询6-最后个文章分类
+    public function selectArticleTypeOffset5() {
+      //连接数据库
+      $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+      //将字符改为utf8并检验
+      if (!$this->db_connection->set_charset("utf8")) {
+        $this->errors[] = $this->db_connection->error;
+      }
+
+      //数据库正常连接
+      if (!$this->db_connection->connect_errno) {
+        $sql = "SELECT * FROM article_type ORDER BY type_id LIMIT 5,100;";
+        $result = $this->db_connection->query($sql);
+        if ($result) {
+            $this->messages[] = "查询成功！";
+            return $result;
+        } else {
+            $this->errors[] = "对不起，查询失败，请您返回重试。";
+        }
+      } else {
+          $this->errors[] = "数据库连接失败。";
+      }
+    }
+
     // 删除分类
     public function deleteArticleType($typeId) {
       //连接数据库
@@ -96,6 +147,7 @@
           $this->errors[] = "数据库连接失败。";
       }
     }
+
     // 修改分类名
     public function updateArticleType($typeId, $typeName) {
       //连接数据库

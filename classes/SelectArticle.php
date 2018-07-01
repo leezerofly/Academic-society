@@ -97,18 +97,45 @@
 
         //数据库正常连接
         if (!$this->db_connection->connect_errno) {
-
+            // $pageSize = 10;
+            // $sqlCount = "SELECT COUNT(*) as total FROM article WHERE article_type_id = '" . $articleTypeId . "';";
+            // $rsCount = $this->db_connection->query($sqlCount);      
+            // $myrow = $rsCount->fetch_row();
+            // $totalCounts = $myrow[0];
+            // $offset=$pagesize*($currentPage - 1);
             // 根据文章类型id article_type_id 倒序查询文章标题 article_title       
+            // $sql = "SELECT * FROM article WHERE article_type_id = '" . $articleTypeId . "' ORDER BY article_id DESC LIMIT ".$offset.",".$pagesize.";";
             $sql = "SELECT * FROM article WHERE article_type_id = '" . $articleTypeId . "' ORDER BY article_id DESC;";
-            $result = $this->db_connection->query($sql);      
+            $result = $this->db_connection->query($sql);    
 
             while($row=$result->fetch_assoc()){
                 echo "<a href=\"/views/articleContent.php?article_id=".$row["article_id"]."\" class=\"list-group-item\">".
                         "<p>".$row["article_title"]."</p>".
                         $row["article_time"].
                     "</a>";
-            } 
-
+            }
+            // echo "
+            // <script>
+            //     $('#jqPaginator').jqPaginator({
+            //         totalCounts: ".$totalCounts.",
+            //         pageSize: ".$pageSize.",
+            //         visiblePages: 10,
+            //         currentPage: 1,
+            //         onPageChange: function (num) {
+            //             $('#text').html('');
+            //         }
+            //     });
+            // </script>";
+            // $('#box').paging({
+            //     initPageNo: 1, // 初始页码
+            //     totalPages: totalPages, //总页数
+            //     totalCount: '合计' + setTotalCount + '条数据', // 条目总数
+            //     slideSpeed: 600, // 缓动速度。单位毫秒
+            //     jump: true, //是否支持跳转
+            //     callback: function(page) { // 回调函数
+            //         console.log(page);
+            //     }
+            // })
             // 如果查询成功
             if ($row) {
                 $this->messages[] = "查询成功！";
@@ -133,10 +160,14 @@
 
         //数据库正常连接
         if (!$this->db_connection->connect_errno) {
+            $pageSize = 10;
 
             // 根据文章类型id article_type_id 倒序查询文章标题 article_title       
             $sql = "SELECT COUNT(*) AS total FROM article WHERE article_type_id = '" . $articleTypeId . "';";
             $result = $this->db_connection->query($sql);      
+
+            $myrow = mysql_fetch_array($result);
+            $numrows = $myrow[0];
 
             while($row=$result->fetch_assoc()){
                 echo "                       
