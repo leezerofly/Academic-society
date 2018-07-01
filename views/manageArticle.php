@@ -5,20 +5,6 @@
   // 引入SelectArticle类
   require_once("../classes/SelectArticle.php");
   $selectArticle = new SelectArticle();
-  
-  //输出查询文章时错误及提示信息
-  if (isset($selectArticle)) {
-    if ($selectArticle->errors) {
-      foreach ($selectArticle->errors as $error) {
-          echo $error;
-      }
-    }
-    if ($selectArticle->messages) {
-      foreach ($selectArticle->messages as $message) {
-          echo $message;
-      }
-    }
-  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +21,28 @@
 </head>
 <body>
   <div>
+    <p class="lead text-center">
+      <?php
+        $articleId = isset($_GET['delete_article_id']) ? $_GET['delete_article_id'] : 0;
+    
+        if($articleId > 0) {   
+          $selectArticle->deleteArticle($articleId);
+        }  
+        //输出查询文章时错误及提示信息
+        if (isset($selectArticle)) {
+          if ($selectArticle->errors) {
+            foreach ($selectArticle->errors as $error) {
+              echo $error;
+            }
+          }
+          if ($selectArticle->messages) {
+            foreach ($selectArticle->messages as $message) {
+              echo $message;
+            }
+          }
+        }
+      ?>
+    </p>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs tab-list" role="tablist">

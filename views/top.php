@@ -22,13 +22,13 @@ $login = new Login();
 
     <!-- 引入 Bootstrap -->
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link href="/framework/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="/framework/jQuery-3.2.1.js"></script>
+    <script src="../js/jQuery-3.2.1.js"></script>
 
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="/framework/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/font.css">
@@ -56,7 +56,10 @@ $login = new Login();
                             
                             //判断是不是管理员
                             if($login->isAdmin() == true) {
-                                echo "<a href=\"/views/manageArticle.php\" class=\"btn btn-default btn-sm pull-right\">管理文章</a>";
+                                echo "
+                                <a href=\"/views/manageType.php\" class=\"btn btn-default btn-sm pull-right\">管理分类</a>
+                                <a href=\"/views/manageArticle.php\" class=\"btn btn-default btn-sm pull-right\">管理文章</a>
+                                ";
                             }
                             echo "</div>";
                         } else {

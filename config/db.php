@@ -13,5 +13,5 @@
  */
 define("DB_HOST", "localhost");
 define("DB_NAME", "academic-society");
-define("DB_USER", "root");
-define("DB_PASS", "fly");
+define("DB_USER", "leezerofly");
+define("DB_PASS", "leezerofly");

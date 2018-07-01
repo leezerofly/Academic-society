@@ -6,19 +6,6 @@ require_once("../classes/Registration.php");
 
 $registration = new Registration();
 
-// show potential errors / feedback (from registration object)
-if (isset($registration)) {
-    if ($registration->errors) {
-        foreach ($registration->errors as $error) {
-            echo $error;
-        }
-    }
-    if ($registration->messages) {
-        foreach ($registration->messages as $message) {
-            echo $message;
-        }
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +17,7 @@ if (isset($registration)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Bootstrap -->
-    <link href="/framework/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- 自定义样式 -->
     <link href="/css/main.css" rel="stylesheet">
@@ -67,8 +54,25 @@ if (isset($registration)) {
             <br>
         </form>
     </div>
-
-    <!-- backlink -->
-    <!-- <a href="index.php" class="btn btn-lg btn-primary btn-block">返回登录页面</a> -->
+    <p class="lead text-center">
+        <?php
+            if (isset($registration)) {
+                if ($registration->errors) {
+                    foreach ($registration->errors as $error) {
+                        echo $error;
+                    }
+                }
+                if ($registration->messages) {
+                    foreach ($registration->messages as $message) {
+                        echo $message;
+                    }
+                    $url = "/views/login.php";
+                    echo "<script>";  
+                    echo "window.location.href='$url'";  
+                    echo "</script>"; 
+                }
+            }
+        ?>
+    </p>
 </body>
 </html>

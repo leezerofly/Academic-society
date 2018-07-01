@@ -1,6 +1,14 @@
-.btn-article-del {
+.list-content {
   height: 72px;
-  line-height: 60px;
+}
+
+.list-lineheight {
+  line-height: 50px;
+}
+
+.btn-article {
+  height: 72px;
+  line-height: 58px;
 }
 
 .tab-list {
